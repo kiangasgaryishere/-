@@ -6,3 +6,5 @@
 - Noto Sans Arabic: SIL OFL 1.1. See fonts/LICENSE-Noto.txt.
 - Renderer: Lemo Opuscar, MIT, commit 9eb7739a0fca4c6990fe966cb8b87b1930f7193a.
 - Supplied narration: user/client asset. Full source retained locally, not included in repository. Only authorized first-ten-second export is delivered.
+
+V003: chair component atlas and paper workshop portal generated specifically for this film. DejaVu Sans Condensed Bold, Bitstream Vera/DejaVu license, fonts/LICENSE-DejaVu.txt; typeset GARAGE in code.

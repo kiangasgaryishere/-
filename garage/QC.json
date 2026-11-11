@@ -1,9 +1,9 @@
 {
-  "version": "v002-first10",
+  "version": "v003-through20",
   "checks": {
     "render": {
       "status": "passed",
-      "evidence": "300 rendered frames, 1080x1920, 30fps; Opuscar core renderer"
+      "evidence": "600 frames, 1080x1920 30fps; first 300 stream-copied from approved v002, next 300 newly rendered"
     },
     "full_file_decode": {
       "status": "passed",
@@ -11,15 +11,11 @@
     },
     "video_audio_duration": {
       "status": "passed",
-      "evidence": "ffprobe: both streams 10.000s; both start_time=0; AAC 48kHz"
-    },
-    "encoded_audio": {
-      "status": "passed",
-      "evidence": "Measured -15.20 LUFS integrated, -1.48 dBTP true peak"
+      "evidence": "Both streams exactly 20.000s, AAC48kHz, 600 picture frames"
     },
     "contact_sheet": {
       "status": "passed",
-      "evidence": "Inspected ten samples across decoded final MP4; also full-size opening/study/final-shot stills"
+      "evidence": "Inspected full-film 2-second sample sheet and 4fps 9–11-second join strip; detailed new asset stills also inspected"
     },
     "narration_script_match": {
       "status": "not performed",
@@ -35,14 +31,22 @@
     },
     "audio_unchanged": {
       "status": "passed",
-      "evidence": "SHA256=7b1c4c3f36e85db28fd0a6c63829bbbe992ce1bd73634f8b942157258c72ec32; encoded audio matches v001 exactly"
+      "evidence": "First 480000 canonical PCM mix samples unchanged before single 20-second AAC encode. Narrator continuous; no per-part AAC concatenation."
     },
     "visual_revision": {
       "status": "passed",
-      "evidence": "Inspected full-size 1.8s/5.8s/8.2s stills; question at center, 184px; all independent red strokes removed, continuous red paper support"
+      "evidence": "V002 opening reused unchanged. New independent photographic chair components, workshop paper model and code-set GARAGE invitation."
+    },
+    "first_section_picture_preserved": {
+      "status": "passed",
+      "evidence": "All first 300 decoded frame hashes equal v002"
+    },
+    "encoded_audio": {
+      "status": "passed",
+      "evidence": "Decoded cumulative MP4 measurement: -15.44 LUFS, -1.34 dBTP; no clipping"
     }
   },
-  "sha256": "a100a113d1ead26f08e827330d15845153487b4597c0de1ec69655e59f6e0bd0",
+  "sha256": "1f416a04261ee5704c6d88c844f66990ce91d4b38a0f253f0e9a61bbf5be26e2",
   "material_limitations": [
     "Not a completed 58-second film",
     "No word-level alignment verification or listening review",
