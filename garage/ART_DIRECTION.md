@@ -1,0 +1,1 @@
+Approved direction: see REVIEW.md. Black paper photographic cutout collage, purposeful single red interventions, crisp sparse Persian sans text. Three actual render stages: close material view, white study reveal, independent paper-strip assembly. No generic opening logo or ten-second end card. The ten-second preview is not the final whole-film palette audit.

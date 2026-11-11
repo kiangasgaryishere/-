@@ -1,0 +1,19 @@
+{
+  "title": "GARAGE",
+  "format": "Instagram Reel 1080x1920 30fps",
+  "palette": [
+    "#111111",
+    "#FFFFFF",
+    "#D71920"
+  ],
+  "color_target": [
+    60,
+    25,
+    15
+  ],
+  "review": "User approved style/story direction; now explicitly requested first 10 seconds",
+  "mode": "ten-second",
+  "narration": "safari.mp3, unchanged wording and speed",
+  "caption_policy": "sparse editorial words only; no word captions",
+  "audio": "Original swung bass/percussion draft, sampled VCSL CC0 harmonica, industrial/paper CC0 SFX; no listening review performed"
+}

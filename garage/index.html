@@ -1,0 +1,50 @@
+<!doctype html><html lang="fa"><meta charset="utf-8"><style>
+@font-face{font-family:GarageFa;src:url('fonts/NotoSansArabic-Bold.ttf')}*{margin:0}body{background:#111;overflow:hidden}canvas{display:block;width:100vw;height:100vh}
+</style><canvas id="film" width="1080" height="1920"></canvas><script type="module">
+import {ss,lerp,mulberry} from '/core/lib.js';
+const c=document.querySelector('canvas'),x=c.getContext('2d');
+const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('bold 70px GarageFa');
+const study=new Image();study.src='assets/chair-study.png';await study.decode();
+const T=await (await fetch('timeline.json')).json();
+const W=1080,H=1920,BLACK='#111111',RED='#D71920',WHITE='#FFFFFF';
+const cl=v=>Math.max(0,Math.min(1,v)),e=(t,a,b)=>ss(cl((t-a)/(b-a)));
+const paper=document.createElement('canvas');paper.width=W;paper.height=H;const p=paper.getContext('2d'),rng=mulberry(137);
+p.fillStyle=BLACK;p.fillRect(0,0,W,H);for(let i=0;i<210000;i++){const g=10+Math.floor(rng()*18);p.fillStyle=`rgba(${g},${g},${g},${.08+rng()*.26})`;p.fillRect(rng()*W,rng()*H,1+rng()*2,1+rng()*2)}
+// Low-contrast physical fibres, fixed to the paper rather than flickering with time.
+p.lineWidth=.55;for(let i=0;i<5000;i++){const a=rng()*W,b=rng()*H;p.strokeStyle=`rgba(255,255,255,${rng()*.022})`;p.beginPath();p.moveTo(a,b);p.lineTo(a+2+rng()*9,b+rng()*2);p.stroke()}
+const tear=[];for(let i=-100;i<=1180;i+=12)tear.push([i,1350-i*.25+(rng()-.5)*16]);
+function tornBand(open=1,shift=0){x.save();x.translate(0,shift);x.beginPath();tear.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b));for(let i=tear.length-1;i>=0;i--)x.lineTo(tear[i][0],tear[i][1]+92*open);x.closePath();x.fillStyle=RED;x.fill();x.strokeStyle='#fff';x.lineWidth=3;x.beginPath();tear.forEach(([a,b],i)=>i?x.lineTo(a,b):x.moveTo(a,b));x.stroke();x.restore()}
+function photo(cx,cy,width,rot=0,opacity=1){x.save();x.globalAlpha=opacity;x.translate(cx,cy);x.rotate(rot);x.shadowColor='rgba(0,0,0,.65)';x.shadowBlur=28;x.shadowOffsetY=18;const h=width*chair.height/chair.width;x.drawImage(chair,-width/2,-h/2,width,h);x.restore()}
+function type(s,cx,cy,size=72,alpha=1){x.save();x.globalAlpha=alpha;x.direction='rtl';x.textAlign='center';x.textBaseline='middle';x.font=`bold ${size}px GarageFa`;x.fillStyle=WHITE;x.fillText(s,cx,cy);x.restore()}
+function path(points,progress,color=WHITE,width=3){let lengths=[],total=0;for(let i=1;i<points.length;i++){const d=Math.hypot(points[i][0]-points[i-1][0],points[i][1]-points[i-1][1]);lengths.push(d);total+=d}let remain=total*cl(progress);x.strokeStyle=color;x.lineWidth=width;x.lineJoin='round';x.lineCap='round';x.beginPath();x.moveTo(...points[0]);for(let i=1;i<points.length;i++){if(remain<=0)break;const z=Math.min(1,remain/lengths[i-1]);x.lineTo(lerp(points[i-1][0],points[i][0],z),lerp(points[i-1][1],points[i][1],z));remain-=lengths[i-1]}x.stroke()}
+const lines=[[[270,690],[310,400],[770,370],[820,640]],[[280,690],[820,640],[760,835],[230,870],[280,690]],[[230,870],[190,1230],[380,1270],[420,1170]],[[760,835],[800,1250],[600,1340],[590,940]],[[270,690],[180,650],[130,720],[125,1050],[210,1120]],[[820,640],[890,620],[930,700],[930,1150],[800,1250]],[[310,400],[345,430],[780,405]],[[330,480],[320,630],[770,600],[780,445]],[[280,740],[760,690],[725,800],[250,830]]];
+function sketch(t){x.save();const q=e(t,4.05,5.9);x.beginPath();x.rect(70,1550-1300*q,940,1300*q);x.clip();x.globalCompositeOperation='screen';x.globalAlpha=.82;const w=875,h=w*study.height/study.width;x.drawImage(study,540-w/2,1035-h/2,w,h);x.restore();x.save();x.setLineDash([9,14]);x.globalAlpha=.26;path([[150,1490],[930,1490]],e(t,5,5.6),WHITE,1.2);path([[980,550],[980,1430]],e(t,5.2,5.8),WHITE,1.2);x.setLineDash([]);x.globalAlpha=.9;path([[480,1110],[630,1060]],e(t,5.6,6),RED,6);x.restore()}
+function corner(a,b,s=1){x.save();x.translate(a,b);x.scale(s,s);x.strokeStyle='rgba(255,255,255,.25)';x.lineWidth=1;x.beginPath();x.moveTo(0,25);x.lineTo(0,0);x.lineTo(25,0);x.stroke();x.restore()}
+window.DUR=T.preview_frames/T.fps;window.EV=[{t:T.milestones[0],type:'material'},{t:T.shots[0].end_seconds,type:'paper'},{t:4.3,type:'pencil'},{t:6.5,type:'assembly'},{t:8.9,type:'paper'}];
+window.render=function(t){x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);x.save();
+ if(t<T.shots[0].end_seconds){
+   const z=e(t,0,T.shots[0].end_seconds),w=lerp(1530,1110,z),cx=lerp(480,540,z),cy=lerp(1070,1030,z);
+   x.save();x.beginPath();x.rect(0,0,W*e(t,.1,.8),H);x.clip();tornBand(1,80-30*z);x.restore();
+   photo(cx,cy,w,lerp(-.045,-.015,z));
+   if(t>.85){x.save();const q=e(t,.85,1.3);x.translate(0,lerp(20,0,q));type('واقعی؟',310,340,82,q);x.restore()}
+   corner(86,230);corner(994,1640,-1);
+ }else if(t<T.shots[1].end_seconds){
+   const q=e(t,T.shots[0].end_seconds,T.shots[1].end_seconds);photo(540,1030,1110,-.015);
+   // Irregular physical black paper tears cover the photograph, leaving a purposeful red void.
+   x.fillStyle=BLACK;for(let i=0;i<9;i++){const h=240,w=W*e(t,T.shots[0].end_seconds+i*.025,3.75+i*.025);x.fillRect(i%2?W-w:0,i*240,w,h+2)}
+   x.save();x.beginPath();x.rect(0,0,W,H);x.clip();path([[140,1210],[300,1165],[460,1120],[670,1060],[940,975]],q,RED,9);x.restore();
+ }else if(t<T.shots[2].end_seconds){
+   x.globalAlpha=1-e(t,T.shots[1].end_seconds,4.6);path([[140,1210],[300,1165],[460,1120],[670,1060],[940,975]],1,RED,9);x.globalAlpha=1;
+   sketch(t);if(t<5.2)type('هیچ',540,350,76,1-e(t,4.65,5.2));
+ }else{
+   const q=e(t,T.shots[2].end_seconds,7.85),grow=e(t,T.shots[2].end_seconds,10);const cx=540,cy=1035,w=850+25*grow;
+   // A set of independently arriving photo-paper strips rebuilds the object from the drawn proposal.
+   x.save();x.globalAlpha=(1-q)*.5;sketch(6.54);x.restore();
+   for(let i=0;i<6;i++){const v=e(t,T.shots[2].end_seconds+i*.09,7.15+i*.09);if(v<=0)continue;x.save();const ya=cy-w*chair.height/chair.width/2;const sh=w*chair.height/chair.width/6;x.beginPath();x.rect(0,ya+i*sh-1,W,sh+2);x.clip();photo(cx+(i%2?-1:1)*(1-v)*130,cy,w,(1-v)*(i%2?.035:-.035),1);x.restore()}
+   x.save();x.globalAlpha=e(t,7.6,8.2);x.translate(0,35);path([[150,1530],[440,1530]],1,WHITE,1);path([[150,1517],[150,1543]],1,WHITE,1);path([[440,1517],[440,1543]],1,WHITE,1);x.restore();
+   if(t>8.85){const q=e(t,8.85,9.5);x.save();x.globalAlpha=.15*q;photo(540-90*q,1035-35*q,w,-.045*q);x.restore();photo(cx,cy,w,0)}
+   const q2=e(t,7.3,7.7);path([[690,1490],[880,1435]],q2,RED,9);
+ }
+ x.restore();
+};window.render(0);window.READY=true;
+</script></html>

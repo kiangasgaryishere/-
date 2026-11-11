@@ -1,0 +1,1 @@
+User approved the three proposed style frames and requested first ten seconds before further production. Preserve prior approved direction. Full film not yet rendered. Do not continue producing the next section before preview feedback.

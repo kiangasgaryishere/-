@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "fps": 30,
+  "sample_rate": 48000,
+  "preview_frames": 300,
+  "duration_frames": 300,
+  "narration_sha256": "a18e5001e5fcced31e91875328ad2c8bca8d7fbdfee60a5396e54980eb834f37",
+  "source_map": [
+    {
+      "kind": "source",
+      "output_start_sample": 0,
+      "output_end_sample": 480000,
+      "source_start_sample": 0,
+      "source_end_sample": 480000
+    }
+  ],
+  "shots": [
+    {
+      "id": "reality",
+      "start_seconds": 0,
+      "end_seconds": 3.35
+    },
+    {
+      "id": "void",
+      "start_seconds": 3.35,
+      "end_seconds": 4.1
+    },
+    {
+      "id": "drawing",
+      "start_seconds": 4.1,
+      "end_seconds": 6.55
+    },
+    {
+      "id": "assembly",
+      "start_seconds": 6.55,
+      "end_seconds": 10
+    }
+  ],
+  "sound_events": [
+    {
+      "id": "foley-paper-touch",
+      "moment": 0.1,
+      "start": 0.07800000000000001,
+      "sync": 0.022,
+      "gain": 0.09,
+      "license": "CC0-1.0",
+      "asset": "sounds/foley/foley-paper-touch.wav"
+    },
+    {
+      "id": "props-page-turn",
+      "moment": 3.35,
+      "start": 3.35,
+      "sync": 0,
+      "gain": 0.065,
+      "license": "CC0-1.0",
+      "asset": "sounds/everyday-props/props-page-turn.wav"
+    },
+    {
+      "id": "writing-pencil-write",
+      "moment": 4.3,
+      "start": 4.3,
+      "sync": 0,
+      "gain": 0.045,
+      "license": "CC0-1.0",
+      "asset": "sounds/writing-and-drawing/writing-pencil-write.wav"
+    },
+    {
+      "id": "mechanical-switch-heavy",
+      "moment": 6.65,
+      "start": 6.6290000000000004,
+      "sync": 0.021,
+      "gain": 0.07,
+      "license": "CC0-1.0",
+      "asset": "sounds/mechanical/mechanical-switch-heavy.wav"
+    },
+    {
+      "id": "foley-paper-touch",
+      "moment": 8.9,
+      "start": 8.878,
+      "sync": 0.022,
+      "gain": 0.07,
+      "license": "CC0-1.0",
+      "asset": "sounds/foley/foley-paper-touch.wav"
+    }
+  ],
+  "milestones": [
+    0.1,
+    0.85,
+    3.35,
+    4.1,
+    5.6,
+    6.55,
+    8.85
+  ],
+  "notes": "Seconds preserve subframe audio events; rendered picture samples at integer frame/fps. First ten seconds of unchanged decoded source narration. No word timestamps asserted."
+}

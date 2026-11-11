@@ -1,0 +1,43 @@
+{
+  "version": "v001-first10",
+  "checks": {
+    "render": {
+      "status": "passed",
+      "evidence": "300 rendered frames, 1080x1920, 30fps; Opuscar core renderer"
+    },
+    "full_file_decode": {
+      "status": "passed",
+      "evidence": "ffmpeg -v error decode returned 0"
+    },
+    "video_audio_duration": {
+      "status": "passed",
+      "evidence": "ffprobe: both streams 10.000s; both start_time=0; AAC 48kHz"
+    },
+    "encoded_audio": {
+      "status": "passed",
+      "evidence": "Measured -15.20 LUFS integrated, -1.48 dBTP true peak"
+    },
+    "contact_sheet": {
+      "status": "passed",
+      "evidence": "Inspected ten samples across decoded final MP4; also full-size opening/study/final-shot stills"
+    },
+    "narration_script_match": {
+      "status": "not performed",
+      "evidence": "ASR model download denied by network; original source sample sequence preserved, no words added/deleted or speed changed"
+    },
+    "full_speed_playback_and_listening": {
+      "status": "not performed",
+      "evidence": "No listening-capable tool available in current toolset"
+    },
+    "music_style": {
+      "status": "needs user review",
+      "evidence": "Original swung bass/percussion, actual CC0 harmonica and light procedural guitar; no listening claim"
+    }
+  },
+  "sha256": "58ef375bbd508f3e10e72ed98fceffbf796cbd46a26abca87c3d252ba42eca0a",
+  "material_limitations": [
+    "Not a completed 58-second film",
+    "No word-level alignment verification or listening review",
+    "Generated chair artwork is a visual asset, not historical product evidence"
+  ]
+}

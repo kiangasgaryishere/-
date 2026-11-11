@@ -1,0 +1,8 @@
+stills/
+stills-check/
+audio/*.wav
+audio/*.mp3
+node_modules/
+.venv/
+video/picture-*.mp4
+*.lock
