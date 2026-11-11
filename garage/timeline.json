@@ -92,5 +92,6 @@
     6.55,
     8.85
   ],
-  "notes": "Seconds preserve subframe audio events; rendered picture samples at integer frame/fps. First ten seconds of unchanged decoded source narration. No word timestamps asserted."
+  "notes": "Seconds preserve subframe audio events; rendered picture samples at integer frame/fps. First ten seconds of unchanged decoded source narration. No word timestamps asserted.",
+  "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer"
 }

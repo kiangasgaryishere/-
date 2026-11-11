@@ -1,5 +1,5 @@
 {
-  "version": "v001-first10",
+  "version": "v002-first10",
   "checks": {
     "render": {
       "status": "passed",
@@ -32,9 +32,17 @@
     "music_style": {
       "status": "needs user review",
       "evidence": "Original swung bass/percussion, actual CC0 harmonica and light procedural guitar; no listening claim"
+    },
+    "audio_unchanged": {
+      "status": "passed",
+      "evidence": "SHA256=7b1c4c3f36e85db28fd0a6c63829bbbe992ce1bd73634f8b942157258c72ec32; encoded audio matches v001 exactly"
+    },
+    "visual_revision": {
+      "status": "passed",
+      "evidence": "Inspected full-size 1.8s/5.8s/8.2s stills; question at center, 184px; all independent red strokes removed, continuous red paper support"
     }
   },
-  "sha256": "58ef375bbd508f3e10e72ed98fceffbf796cbd46a26abca87c3d252ba42eca0a",
+  "sha256": "a100a113d1ead26f08e827330d15845153487b4597c0de1ec69655e59f6e0bd0",
   "material_limitations": [
     "Not a completed 58-second film",
     "No word-level alignment verification or listening review",
