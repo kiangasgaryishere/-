@@ -16,3 +16,6 @@ V005: workbench-v005.png and prototype-v005.png generated specifically for this 
 
 
 V006: lamp-parts-v006.png and pavilion-parts-v006.png generated specifically with image_gen; photorealistic cutout artwork, not documentary photography. Two untouched1536x1024 alpha atlases supply independent Canvas sprites. Uploaded reference videos analyzed only; no source frames/logos/people/audio included in production or Git. SFX KitCC0 at92780e7ab0cdfb557497a988089c47f46e8c7412; VCSLCC0 harmonica. Code-generated geometric print cards and typography.
+
+
+V007 house-v007.png: new photorealistic generated architectural cutout,1024x1536, real-material brick/slate/glass/stone appearance; not a documentary photograph of a real address. Original generated image retained untouched; Canvas mask layers animate its own foundation/walls/roof. No new third-party media or fonts.

@@ -6,7 +6,7 @@ const c=document.querySelector('canvas'),x=c.getContext('2d');
 const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('bold 70px GarageFa');
 const study=new Image();study.src='assets/chair-study.png';await study.decode();
 const parts=new Image();parts.src='assets/chair-parts.png';await parts.decode();const portal=new Image();portal.src='assets/garage-portal.png';await portal.decode();await document.fonts.load('bold 100px GarageLatin');
-const lampParts=new Image();lampParts.src='assets/lamp-parts-v006.png';await lampParts.decode();const buildingParts=new Image();buildingParts.src='assets/pavilion-parts-v006.png';await buildingParts.decode();
+const lampParts=new Image();lampParts.src='assets/lamp-parts-v006.png';await lampParts.decode();const houseAsset=new Image();houseAsset.src='assets/house-v007.png';await houseAsset.decode();
 const T=await (await fetch('timeline.json')).json();
 const W=1080,H=1920,BLACK='#111111',RED='#D71920',WHITE='#FFFFFF';
 const cl=v=>Math.max(0,Math.min(1,v)),e=(t,a,b)=>ss(cl((t-a)/(b-a)));
@@ -98,34 +98,33 @@ function lamp(t,alpha=1){
  const dx=-20*.9,dy=-730*.9,px=540+dx*Math.cos(angle)-dy*Math.sin(angle),py=1330+dx*Math.sin(angle)+dy*Math.cos(angle);
  layer(lampParts,[1040,320,470,440],[1450,440],[px+(1-shade)*240,py-(1-shade)*190],.9,(1-shade)*-.7,alpha*e(t,22.15,22.4));
 }
-function pavilion(t){
- const floor=settle(t,24.05,24.7),left=settle(t,24.7,25.55),right=settle(t,25.15,25.95),roof=settle(t,25.95,26.8);
- layer(buildingParts,[20,40,730,440],[390,260],[540,1190+(1-floor)*250],1.05,0,e(t,24.05,24.3));
- // Rear faces meet in a common architectural coordinate system.
- layer(buildingParts,[885,8,445,500],[900,280],[540+(1-left)*-250,975-(1-left)*240],.9,(1-left)*-.12,e(t,24.7,24.95));
- layer(buildingParts,[200,520,445,500],[626,780],[540+(1-right)*250,975-(1-right)*260],.9,(1-right)*.12,e(t,25.15,25.4));
- const mark=e(t,26.45,26.85);x.save();x.globalAlpha=mark;x.fillStyle=RED;x.beginPath();x.moveTo(420,1300);x.lineTo(540,1235);x.lineTo(660,1300);x.lineTo(540,1370);x.closePath();x.fill();x.restore();
- layer(buildingParts,[790,550,730,460],[1150,775],[540,920-(1-roof)*400],1.05,(1-roof)*.055,e(t,25.95,26.2));
+// V007: one coherent architectural photograph separated into material masks.
+const roofMask=[[0,755],[305,220],[665,355],[670,290],[750,280],[785,340],[785,450],[1024,790],[1024,805],[650,715],[305,280],[30,770]];
+const baseMask=[[0,1192],[650,1210],[1024,1180],[1024,1536],[0,1536]];
+function polygon(points){x.moveTo(...points[0]);for(const pt of points.slice(1))x.lineTo(...pt);x.closePath()}
+function housePiece(kind,dx,dy,alpha){
+ if(alpha<=0)return;x.save();x.globalAlpha=alpha;x.translate(540+dx,1080+dy);x.scale(.84,.84);x.translate(-512,-800);
+ x.beginPath();if(kind==='body'){x.rect(0,0,1024,1536);polygon(roofMask);polygon(baseMask);x.clip('evenodd')}else{polygon(kind==='roof'?roofMask:baseMask);x.clip()}
+ x.drawImage(houseAsset,0,0);x.restore();
 }
-function graphicCard(cx,cy,angle,t,index){
- const q=settle(t,27.45+index*.12,28.3+index*.12);x.save();x.translate(cx+(1-q)*(index%2?-700:700),cy);x.rotate(angle);x.scale(.6,.6);x.shadowColor='rgba(0,0,0,.55)';x.shadowBlur=15;x.shadowOffsetY=8;x.fillStyle=WHITE;x.fillRect(-190,-140,380,280);x.fillStyle=BLACK;
- for(let k=0;k<7;k++){x.save();x.beginPath();x.rect(-170,-120,340,240);x.clip();x.translate(-180+k*65,-80);x.rotate(-.5);x.fillRect(-12,-220,25,460);x.restore()}
- x.restore();
+function house(t){
+ if(t>=28.2){x.save();x.translate(540,1080);x.scale(.84,.84);x.translate(-512,-800);x.drawImage(houseAsset,0,0);x.restore();return}
+ const f=settle(t,26.05,26.6),w=settle(t,26.4,27.25),r=settle(t,27.1,28.2);
+ housePiece('base',0,(1-f)*220,e(t,26.05,26.25));housePiece('body',-(1-w)*200,-(1-w)*160,e(t,26.4,26.65));housePiece('roof',0,-(1-r)*320,e(t,27.1,27.35));
 }
 function continuation(t){
  if(t<20){through20(t);return}
  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
  if(t<21.0){x.drawImage(doorwayFrame,0,0);for(let i=0;i<5;i++){const q=e(t,20+i*.045,20.65+i*.045);x.save();x.beginPath();x.rect(0,400+i*220,W*q,225);x.clip();x.drawImage(paper,0,0);x.restore()}}
- if(t<24.05){
-  const on=e(t,22.95,23.1)*(1-e(t,23.65,24.05));x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();lamp(t,1-e(t,23.75,24.05));
-  if(t>23.7){const a=e(t,23.7,24.05);for(let i=0;i<3;i++){x.save();x.translate(lerp(1400,540,a),820+i*180);x.rotate(-.1);x.fillStyle=i===1?WHITE:'#d5d5d5';x.fillRect(-600,-55,1200,110);x.restore()}}
- }else if(t<27.3){pavilion(t)}
- else{
-  const q=e(t,27.3,28.3);x.save();x.translate(lerp(0,210,q),lerp(0,-70,q));x.translate(540,1190);x.scale(lerp(1,.7,q),lerp(1,.7,q));x.translate(-540,-1190);pavilion(t);x.restore();
-  x.save();x.translate(lerp(-650,-270,q),100);x.translate(540,1330);x.scale(.45,.45);x.translate(-540,-1330);lamp(23.3,e(t,27.3,28));x.restore();
-  graphicCard(350,710,-.07,t,0);graphicCard(640,760,.07,t,1);
-  // Red is an invitation tab, localized and introduced only on the phrase beat.
-  const a=e(t,28.25,28.5);x.save();x.globalAlpha=a;x.translate(0,12*(1-a));redSheet(1,150,1640,760);type('بزنیم گاراژ',540,1635,76,a);x.restore();
+ if(t<26.05){
+  // Exactly two extra seconds: one in assembly and one in the settled hold; audio clock unchanged.
+  const on=e(t,23.95,24.1)*(1-e(t,25.65,26.05));x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();const lampTime=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lampTime,1-e(t,25.75,26.05));
+  if(t>25.7){const a=e(t,25.7,26.05);for(let i=0;i<3;i++){x.save();x.translate(lerp(1400,540,a),820+i*180);x.rotate(-.1);x.fillStyle=i===1?WHITE:'#d5d5d5';x.fillRect(-600,-55,1200,110);x.restore()}}
+ }else{
+  house(t);
+  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);
+  type('خیال؟',750,450+18*(1-a),68,a);type('سؤال؟',320,450+18*(1-b),68,b);
+  const k=e(t,27.6,27.85);x.save();x.globalAlpha=k;redSheet(1,150,1640,760);x.restore();type('ایده عجیب',540,1635,76,k);
  }
 }
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;

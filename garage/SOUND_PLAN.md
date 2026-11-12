@@ -9,3 +9,8 @@ V005 supersedes V004 music reduction. Reconstruct original rng810 94BPM bass/bru
 
 
 V006: keep continuous reconstructed94BPM bass/percussion/guitar under untouched source timing. VCSL harmonica20.85–21.11 and29.3–29.59 uses measured quiet source intervals20.6–21.47 and29.20–29.79 (RMS<.012); no claim of listening review. Sparse CC0 Foley is synchronized to first target contact of damped arrival, not last settle: base20.955, arm21.624, shade22.340, switch23.05, architectural floor24.205, walls24.902/25.340, roof26.152. Quiet paper bridges20.35/24/28.25. Historical mastered stems absent; first20 decoded approved PCM retained and new continuous AAC encoded once.
+
+
+V007: source narration and94BPM score remain continuous at original timing, including harmonica in verified quiet source windows20.85/29.3. Keep lamp contact/switch cues. Page-turn shifts24→26; house material first contacts26.181/26.602/27.362, title paper slide27.6. No speech stretch, pause or duplication to extend lamp; total30s maintained. Single continuous AAC encode. No new listening claim.
+
+V007 final timing refinement: the+2s lamp scene is split into+1s assembly (20.8–23.95 versus20.8–22.95) and+1s settled hold. Only visual sample time is mapped; original speech/music remain on the global clock. Lamp first-contact cues21.027/22.007/23.056, light switch24.05. Transition ends26.05 as planned.

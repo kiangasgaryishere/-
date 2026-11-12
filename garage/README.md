@@ -1,5 +1,5 @@
 # GARAGE cumulative preview
-Latest: video/garage-through-030s-v006.mp4. Earlier exports retained.
+Latest: video/garage-through-030s-v007.mp4. Earlier exports retained.
 
 Renderer: /workspace/video-tools/lemo-opuscar, commit f2471cacca270963baa2e1c72b8a7b25dfe0d95c.
 From renderer root:
@@ -12,3 +12,5 @@ First 600 picture frames are reused from v003. First twenty seconds of recovered
 V005 preparation: reconstruct_score_v005.py writes the original full music/FX draft into /workspace/garage-production-v005/audio (create that directory first). Then build_audio30_v005.py uses that music and recovered approved v003 PCM. The two new generated photographic assets and three preproduction style frames are documented in TREATMENT-v005.md and style-review-v005.jpg.
 
 V006 revision: REFERENCES.md and TREATMENT-v006.md record analysis of three uploaded videos and the motion/shot plan. Independent lamp and architectural component atlases replace chair imagery after20. From renderer root render with --q start=20 and --out /workspace/garage-production-v006/continuation.mp4, then run build_audio30_v006.py and bash assemble30_v006.sh. It reuses the reconstructed score from reconstruct_score_v005.py, adds VCSL harmonica in measured voice gaps, and regenerates material-contact cues. Assets remain original alpha atlases, cropped only by Canvas. The final Persian invitation is visual only; no speech edits.
+
+V007: lamp scene extended by2seconds within30second total; complete photorealistic house assembles from masked parts of house-v007.png, new questions and final ایده عجیب. Render with --q start=20 --out /workspace/garage-production-v007/continuation-final.mp4 from library root. Run build_audio30_v007.py then bash assemble30_v007.sh. Source/music prerequisites same as V006. See TREATMENT-v007.md for targeted plan and timing. Old assembly/build scripts reproduce old versions only with corresponding old source revisions.

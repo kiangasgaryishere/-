@@ -1,6 +1,6 @@
 {
-  "version": "v006-through30",
-  "sha256": "52d380be423910a52963fbc63c68ce3957b529ff5728c08cb5a5648b4294bebe",
+  "version": "v007-through30",
+  "sha256": "61af0430e397af9720ddf3472e7267c78a90842e5bf49edd3be854be36857687",
   "streams": [
     {
       "codec_name": "h264",
@@ -29,23 +29,36 @@
     },
     "first20_picture": {
       "status": "passed",
-      "evidence": "All600 decoded frame hashes identical to approvedv003"
+      "evidence": "All600 decoded picture hashes equal approvedv003"
     },
-    "reference_analysis": {
+    "lamp_extension": {
       "status": "passed",
-      "evidence": "Three videos: metadata,16-frame whole-video contact sheets and4fps closer strips; no reference media reused"
+      "evidence": {
+        "lamp_scene_end_before": 24.05,
+        "lamp_scene_end_after": 26.05,
+        "scene_extension_seconds": 2,
+        "assembly_duration_before": 2.15,
+        "assembly_duration_after": 3.15,
+        "additional_settled_hold_seconds": 1,
+        "audio_retimed": false,
+        "total_seconds": 30
+      }
+    },
+    "house": {
+      "status": "passed",
+      "evidence": "Real-material1024x1536 house asset with brick/slate/glass/stone and paper-cut grain. Same-source masked base/body/roof assemble; final original asset draws without mask seams. Reviewed4fps assembly strip."
+    },
+    "text_revision": {
+      "status": "passed",
+      "evidence": "Separate خیال؟ right and سؤال؟ left; lower ایده عجیب readable27.85–30. Lower invitation and striped cards absent in20–30."
     },
     "preproduction": {
       "status": "passed",
-      "evidence": "TREATMENT-v006, two photographed-style alpha atlases, three actual style frames reviewed before full render"
+      "evidence": "Three rendered style frames inspected before full render; final labels reordered to Persian reading order before render"
     },
-    "independent_motion": {
+    "visual_review": {
       "status": "passed",
-      "evidence": "Reviewed4fps strips: base/arm/shade move independently; floor/walls/roof move independently. No chair appears after20. No reliance on camera pan alone."
-    },
-    "typography": {
-      "status": "passed",
-      "evidence": "بزنیم گاراژ returns visually28.25–30 with readable hold28.5–30; original narrator unchanged"
+      "evidence": "2fps24–30 revision strip and4fps house assembly strip inspected"
     },
     "music_continuity": {
       "status": "passed",
@@ -71,14 +84,9 @@
     "encoded_audio": {
       "status": "passed",
       "evidence": {
-        "integrated_lufs": "-15.83",
-        "true_peak_dbtp": "-1.39",
-        "format": "48kHz AAC, continuous30s encode"
+        "lufs": "-15.83",
+        "true_peak_dbtp": "-1.39"
       }
-    },
-    "visual_review": {
-      "status": "passed",
-      "evidence": "Contact sheet,4fps lamp and architecture action strips, mobile-scale composition inspected"
     },
     "word_alignment": {
       "status": "not performed"
@@ -88,9 +96,9 @@
     }
   },
   "limitations": [
-    "Photorealistic generated assets, not documentary photographs",
-    "Historical mastered soundtrack stems absent; recovered first20 PCM and reconstructed original score with new harmonica/Foley",
-    "No full-speed listening or word-level ASR verification",
-    "Cumulative0–30 only; remaining narration not produced"
+    "Photorealistic generated house, not documentary photography",
+    "Historical mastered soundtrack stems absent; first20 decoded PCM recovered and original score reconstructed; AAC encoded continuously once",
+    "No full-speed listening or word-level ASR claim",
+    "Cumulative0–30 only"
   ]
 }

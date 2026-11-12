@@ -7,3 +7,6 @@ V005: replace flat question-card with photorealistic generated workbench still-l
 
 
 V006 supersedes V00520–30. Preserve dark photographic cut-paper style, but animate independent parts, not one desk still. New grayscale lamp-part and pavilion-part atlases with transparent edges; no chair in this new section. Lamp assembles, localized red light switches on briefly, model assembles, graphic cards enter. Small red entrance path and invitation tab are events, not a constant field. Black/white/red compositional target60/25/15 applies over film, not rigid pixel quotas on every textured frame. References and specific transfers: REFERENCES.md. Three real rendered style frames inspected before full render.
+
+
+V007 replaces open pavilion with a recognisable complete home: pitched slate roof/ridge/chimney, white textured brick walls, glass windows, red door, stone foundation/steps. Full1024x1536 photographic-style generated asset; animated masks separate its own roof/body/base so assembly has exact material and projection continuity. Fine image print grain and paper-cut alpha edges, no toy-cardboard materials. Final composition: خیال؟ right and سؤال؟ left on a shared upper baseline; house hero centered; ایده عجیب below. No striped cards or mini-lamp in final shot.
