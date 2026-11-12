@@ -127,5 +127,13 @@
     "Historical mastered soundtrack stems absent; recovered first20PCM and original score reconstruction used",
     "No new full-speed listening/word-level ASR claim",
     "Cumulative0–33 preview, not completed58s film"
-  ]
+  ],
+  "delivery": {
+    "commit": "cae01d6fa495a452eeb820ece222f8b1e389184b",
+    "remote_branch_verified": true,
+    "url": "https://raw.githubusercontent.com/kiangasgaryishere/-/cae01d6fa495a452eeb820ece222f8b1e389184b/garage/video/garage-through-033s-v010.mp4",
+    "download_sha256": "fb94fe3a6cbe4d2b23081dc24e9b7901bf87cf3dcc10465cfe5258e1ad98bc83",
+    "download_matches_export": true,
+    "bytes": 37362822
+  }
 }
