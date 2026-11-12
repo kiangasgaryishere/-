@@ -2,16 +2,16 @@
   "schema_version": 1,
   "fps": 30,
   "sample_rate": 48000,
-  "preview_frames": 600,
-  "duration_frames": 600,
-  "narration_sha256": "a18e5001e5fcced31e91875328ad2c8bca8d7fbdfee60a5396e54980eb834f37",
+  "preview_frames": 900,
+  "duration_frames": 900,
+  "narration_sha256": "1055040cb2842c4b124f49c826e5e1cbced3e2524b00a070e7218f1582b3ac20",
   "source_map": [
     {
       "kind": "source",
       "output_start_sample": 0,
-      "output_end_sample": 960000,
+      "output_end_sample": 1440000,
       "source_start_sample": 0,
-      "source_end_sample": 960000
+      "source_end_sample": 1440000
     }
   ],
   "shots": [
@@ -54,6 +54,26 @@
       "id": "garage-invitation",
       "start_seconds": 18.55,
       "end_seconds": 20
+    },
+    {
+      "id": "enter-work-surface",
+      "start_seconds": 20,
+      "end_seconds": 21.4
+    },
+    {
+      "id": "one-question",
+      "start_seconds": 21.4,
+      "end_seconds": 24.1
+    },
+    {
+      "id": "imagined-sketch",
+      "start_seconds": 24.1,
+      "end_seconds": 27.2
+    },
+    {
+      "id": "idea-to-prototype",
+      "start_seconds": 27.2,
+      "end_seconds": 30
     }
   ],
   "sound_events": [
@@ -174,6 +194,42 @@
       "gain": 0.055,
       "asset": "sounds/mechanical/mechanical-switch-heavy.wav",
       "license": "CC0-1.0"
+    },
+    {
+      "id": "props-page-turn",
+      "moment": 21.4,
+      "start": 21.4,
+      "sync": 0,
+      "gain": 0.04,
+      "asset": "sounds/everyday-props/props-page-turn.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "writing-pencil-write",
+      "moment": 24.5,
+      "start": 24.5,
+      "sync": 0,
+      "gain": 0.055,
+      "asset": "sounds/writing-and-drawing/writing-pencil-write.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "foley-paper-touch",
+      "moment": 27.3,
+      "start": 27.278,
+      "sync": 0.022,
+      "gain": 0.05,
+      "asset": "sounds/foley/foley-paper-touch.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "mechanical-switch-heavy",
+      "moment": 29.1,
+      "start": 29.079,
+      "sync": 0.021,
+      "gain": 0.035,
+      "asset": "sounds/mechanical/mechanical-switch-heavy.wav",
+      "license": "CC0-1.0"
     }
   ],
   "milestones": [
@@ -191,8 +247,12 @@
     15.72,
     17,
     18.55,
-    19.2
+    19.2,
+    21.4,
+    24.1,
+    27.2,
+    29.4
   ],
-  "notes": "Cumulative 0–20s. Exact voice samples 0–959999, unchanged wording/speed. Existing 0–10 picture reused, new section rendered at master time start=10. No voice word timestamps asserted.",
+  "notes": "v004: 0–30s cumulative. Original 600 picture frames reused. 20–30 uses master narration without time edits. Phrase timing provisional; no word-level ASR claim.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer"
 }

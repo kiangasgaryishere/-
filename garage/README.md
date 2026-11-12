@@ -1,7 +1,10 @@
-# GARAGE opening preview
-Latest deliverable: video/garage-through-020s-v003.mp4. Prior v001/v002 exports are preserved.
-Render: from /workspace/video-tools/lemo-opuscar run PLAYWRIGHT_CHROME=/usr/bin/chromium LEMO_ANGLE=swiftshader node core/render/video.mjs /workspace/projects/garage --fps 30 --size 1080x1920 --workers 2 --out <new-picture.mp4>.
-Audio source and full stems are retained locally in /workspace/projects/garage/audio; not committed. make_audio.py expects this source and the installed Opuscar/VCSL/SFX libraries. Font and generated picture assets are included. Never commit credentials, caches or complete upstream libraries.
-Canonical timing: timeline.json; motion easing within shots remains in index.html. 10-second export is exactly frames 0–299 and decoded voice samples 0–479999.
+# GARAGE cumulative preview
+Latest: video/garage-through-030s-v004.mp4. Earlier exports retained.
 
-Render continuation only: use --q start=10 with the current 20-second project; it renders local 0–10 from master 10–20. Concatenate approved v002 picture and this picture with stream copy, and mux one 20-second continuous AAC from audio/mix-020s-v003.wav. See extend_audio20.py.
+Renderer: /workspace/video-tools/lemo-opuscar, commit f2471cacca270963baa2e1c72b8a7b25dfe0d95c.
+From renderer root:
+PLAYWRIGHT_CHROME=/usr/bin/chromium LEMO_ANGLE=swiftshader node core/render/video.mjs /workspace/-/garage --q start=20 --fps 30 --size 1080x1920 --workers 2 --out /workspace/garage-production-v004/continuation-fixed.mp4
+
+This renders master 20–30 only. Run build_audio30.py with renderer's .venv/bin/python, then bash assemble30.sh. Original safari.mp3 and prepared WAV live outside Git at /workspace/production-inputs/garage; decode approved v003 to /workspace/garage-production-v004/approved-audio.wav first (mono float WAV, 48kHz). SFX Kit at /workspace/video-tools/sfx-kit. Audio files ignored, do not publish source narration or upstream libraries. Historical full soundtrack stems are unavailable.
+
+First 600 picture frames are reused from v003. First twenty seconds of recovered decoded audio are retained before one continuous AAC encode. Continuation uses original voice samples with no wording/speed edits, sparse CC0 Foley and quieter music. Not a full reconstruction of the historical master. Exact phrase alignment and full-speed listening are not verified. Canonical timing is timeline.json; no dense subtitles. extend20.py is a historical one-time migration, not a build step.

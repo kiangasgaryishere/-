@@ -81,6 +81,31 @@ function master(t){
   if(t>19.2)type('بزنیم گاراژ',540,1190,62,e(t,19.2,19.6));
  }
 }
+// v004: the doorway opens onto a single material work surface.
+const through20=master;
+through20(20);const doorwayFrame=document.createElement('canvas');doorwayFrame.width=W;doorwayFrame.height=H;doorwayFrame.getContext('2d').drawImage(c,0,0);
+function prototype(t){
+ const a=e(t,27.2,29.4);x.save();x.globalAlpha=1-a;x.globalCompositeOperation='screen';x.drawImage(study,180,460,720,720*study.height/study.width);x.restore();
+ for(let i=0;i<6;i++){const q=e(t,27.2+i*.12,28.6+i*.12);if(!q)continue;x.save();const w=720,h=w*chair.height/chair.width,yy=460+i*h/6;x.beginPath();x.rect(0,yy-1,1080,h/6+2);x.clip();photo(540+(i%2?1:-1)*(1-q)*150,460+h/2,w,(1-q)*.04,q);x.restore()}
+}
+function continuation(t){
+ if(t<20){through20(t);return}
+ const enter=e(t,20,21.4);
+ if(t<21.4){x.drawImage(paper,0,0);x.save();x.translate(540,1050);x.scale(1+enter*1.5,1+enter*1.5);x.translate(-540,-1050);x.globalAlpha=1-enter;x.drawImage(doorwayFrame,0,0);x.restore()}
+ else {x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0)}
+ x.save();x.globalAlpha=enter;redSheet(1,1000,1020,950);
+ // Same sheet becomes a workshop surface; no unrelated visual inserts.
+ x.save();x.globalAlpha=.16;path([[110,1490],[960,1430]],1,WHITE,2);path([[140,500],[940,450]],1,WHITE,1);x.restore();
+ if(t<24.1){
+  const q=e(t,21.2,22.1);x.save();x.translate(540,990);x.rotate(-.035);x.fillStyle=BLACK;x.fillRect(-320,-380,640,760);x.globalAlpha=q;type('؟',0,15,290,q);x.restore();
+  // One fine sketch line creeps out of the question, preparing the next image.
+  path([[320,1370],[400,1340],[660,1340],[720,1300]],e(t,22.8,24),WHITE,2);
+ }else if(t<27.2){
+  const q=e(t,24.1,24.8);x.save();x.globalAlpha=1-q;x.fillStyle=BLACK;x.fillRect(220,610,640,760);type('؟',540,1005,290,1-q);x.restore();
+  x.save();x.beginPath();x.rect(130,410,820,1160*e(t,24.15,26.5));x.clip();x.globalCompositeOperation='screen';x.globalAlpha=.92;x.drawImage(study,180,460,720,720*study.height/study.width);x.restore();
+ }else {prototype(t);}
+ x.restore();
+}
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;
-window.render=t=>master(t+offset);window.render(0);window.READY=true;
+window.render=t=>continuation(t+offset);window.render(0);window.READY=true;
 </script></html>

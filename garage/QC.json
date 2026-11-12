@@ -1,55 +1,37 @@
 {
-  "version": "v003-through20",
+  "version": "v004-through30",
+  "sha256": "14bb695c6a659c5134ea9605dad0f4b62e732474b54a11b66acb27ace0da62b1",
   "checks": {
     "render": {
       "status": "passed",
-      "evidence": "600 frames, 1080x1920 30fps; first 300 stream-copied from approved v002, next 300 newly rendered"
+      "evidence": "New master 20–30, 300 frames; cumulative 900 frames, 1080x1920, 30fps, 30.000s H264 and AAC48kHz"
     },
     "full_file_decode": {
-      "status": "passed",
-      "evidence": "ffmpeg -v error decode returned 0"
-    },
-    "video_audio_duration": {
-      "status": "passed",
-      "evidence": "Both streams exactly 20.000s, AAC48kHz, 600 picture frames"
-    },
-    "contact_sheet": {
-      "status": "passed",
-      "evidence": "Inspected full-film 2-second sample sheet and 4fps 9–11-second join strip; detailed new asset stills also inspected"
-    },
-    "narration_script_match": {
-      "status": "not performed",
-      "evidence": "ASR model download denied by network; original source sample sequence preserved, no words added/deleted or speed changed"
-    },
-    "full_speed_playback_and_listening": {
-      "status": "not performed",
-      "evidence": "No listening-capable tool available in current toolset"
-    },
-    "music_style": {
-      "status": "needs user review",
-      "evidence": "Original swung bass/percussion, actual CC0 harmonica and light procedural guitar; no listening claim"
-    },
-    "audio_unchanged": {
-      "status": "passed",
-      "evidence": "First 480000 canonical PCM mix samples unchanged before single 20-second AAC encode. Narrator continuous; no per-part AAC concatenation."
-    },
-    "visual_revision": {
-      "status": "passed",
-      "evidence": "V002 opening reused unchanged. New independent photographic chair components, workshop paper model and code-set GARAGE invitation."
+      "status": "passed"
     },
     "first_section_picture_preserved": {
       "status": "passed",
-      "evidence": "All first 300 decoded frame hashes equal v002"
+      "evidence": "All 600 decoded frame hashes equal approved v003"
     },
-    "encoded_audio": {
+    "contact_sheet": {
       "status": "passed",
-      "evidence": "Decoded cumulative MP4 measurement: -15.44 LUFS, -1.34 dBTP; no clipping"
+      "evidence": "Reviewed question/sketch/prototype key frames and 19–22s join strip"
+    },
+    "audio": {
+      "status": "passed",
+      "evidence": "-15.77 LUFS, -1.05 dBTP encoded; first20 recovered PCM retained before single AAC encode"
+    },
+    "narration_script_match": {
+      "status": "not performed",
+      "evidence": "User script saved; no word-level ASR or listening verification"
+    },
+    "full_speed_listening": {
+      "status": "not performed"
     }
   },
-  "sha256": "1f416a04261ee5704c6d88c844f66990ce91d4b38a0f253f0e9a61bbf5be26e2",
   "material_limitations": [
-    "Not a completed 58-second film",
-    "No word-level alignment verification or listening review",
-    "Generated chair artwork is a visual asset, not historical product evidence"
+    "Cumulative preview 0–30, not finished 58.25925s film",
+    "Historical audio master absent; first20 AAC decoded and encoded once in new continuous AAC, new section voice and sparse Foley",
+    "No listening or word-level alignment verification"
   ]
 }

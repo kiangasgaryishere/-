@@ -8,3 +8,5 @@
 - Supplied narration: user/client asset. Full source retained locally, not included in repository. Only authorized first-ten-second export is delivered.
 
 V003: chair component atlas and paper workshop portal generated specifically for this film. DejaVu Sans Condensed Bold, Bitstream Vera/DejaVu license, fonts/LICENSE-DejaVu.txt; typeset GARAGE in code.
+
+V004 20–30s: reuses existing generated chair/study/doorway artwork; new deterministic Canvas choreography and question-card typography. SFX Kit commit 92780e7ab0cdfb557497a988089c47f46e8c7412, CC0. Original supplied narration retained outside Git. No new third-party visual assets.
