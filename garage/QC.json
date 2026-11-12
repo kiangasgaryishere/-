@@ -153,5 +153,13 @@
     "No new full-speed listening/word-level ASR claim",
     "Cumulative0–33 preview, not completed58s film",
     "V011 physical metal/stone/entry sounds include original designed/synthesized effects, not field-recorded garage Foley"
-  ]
+  ],
+  "delivery": {
+    "commit": "63193626ee6eb5b82018be9bcb59f1a5e88b7f11",
+    "remote_branch_verified": true,
+    "url": "https://raw.githubusercontent.com/kiangasgaryishere/-/63193626ee6eb5b82018be9bcb59f1a5e88b7f11/garage/video/garage-through-033s-v011.mp4",
+    "download_sha256": "4462dba15712cbed9ae10819798453f260d40e99f3b0b66a39fdfba206520af5",
+    "download_matches_export": true,
+    "bytes": 37277651
+  }
 }

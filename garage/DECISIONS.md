@@ -32,3 +32,5 @@ V010 delivery: pushed video commit cae01d6fa495a452eeb820ece222f8b1e389184b to w
 
 
 V011 user explicitly approved proposed hook, garage, whoosh and material Foley design. Sound-only revision retains all990V010 picture packet hashes/timestamps. Builds24added sound layers with material/transition focus, no generic sound on every headline. Actual garage frame/sign movement drives designed rattles; no false full shutter opening. Original source voice/music preserved in lossless base; standard stereo center pan, FX-only processing. Final encode33s/48kHz/stereoAAC192k,−15.57LUFS/−3.83dBTP, full decode passed. Full-speed listening/perceptual audition not available/not claimed.
+
+V011 delivery verified: video commit 63193626ee6eb5b82018be9bcb59f1a5e88b7f11 pushed to work; public pinned MP4 downloaded and SHA256 matched 4462dba15712cbed9ae10819798453f260d40e99f3b0b66a39fdfba206520af5. Link: https://raw.githubusercontent.com/kiangasgaryishere/-/63193626ee6eb5b82018be9bcb59f1a5e88b7f11/garage/video/garage-through-033s-v011.mp4 . This metadata save retains the verified video commit link.
