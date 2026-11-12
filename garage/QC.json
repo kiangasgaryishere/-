@@ -1,6 +1,6 @@
 {
-  "version": "v010-through33",
-  "sha256": "fb94fe3a6cbe4d2b23081dc24e9b7901bf87cf3dcc10465cfe5258e1ad98bc83",
+  "version": "v011-through33-sound-design",
+  "sha256": "4462dba15712cbed9ae10819798453f260d40e99f3b0b66a39fdfba206520af5",
   "streams": [
     {
       "codec_name": "h264",
@@ -13,11 +13,12 @@
     },
     {
       "codec_name": "aac",
-      "sample_rate": "48000",
       "r_frame_rate": "0/0",
       "start_time": "0.000000",
       "duration": "33.000000",
-      "nb_frames": "1548"
+      "nb_frames": "1548",
+      "sample_rate": "48000",
+      "channels": 2
     }
   ],
   "checks": {
@@ -27,7 +28,7 @@
     },
     "render": {
       "status": "passed",
-      "evidence": "Full0–33 rerender,990frames, native1080x1920/30fps, CRF14/JPEG95, one worker,587s"
+      "evidence": "Audio-only revision: all990 V010 H264 packet payload hashes,PTS,DTS,durations identical; no picture re-encode"
     },
     "keywords": {
       "status": "passed",
@@ -89,29 +90,36 @@
     "encoded_audio": {
       "status": "passed",
       "evidence": {
-        "aac_packets": 1548,
-        "packets_and_timestamps_equal": true,
-        "decoded_pcm_equal": true,
-        "pcm_hash": "SHA256=351040975e9b131929bd31e166283cdb98178edd23bd9c9c374f1f5eaacce317",
-        "inherited_integrated_lufs": -15.56,
-        "inherited_true_peak_dbtp": -1.37,
-        "loudness_basis": "DecodedPCM equals verifiedV009, not a new loudness analysis"
+        "integrated_lufs": -15.57,
+        "true_peak_dbtp": -3.83,
+        "loudness_range_lu": 2.8,
+        "sample_rate": 48000,
+        "channels": 2,
+        "duration_seconds": 33,
+        "continuous_aac_encode": true
       }
     },
     "music_and_narration": {
       "status": "passed",
-      "evidence": "Exact completeV009 audio copied, continuous original source samples0–1583999; narration, score, harmonica and contacts unchanged in timing."
+      "evidence": {
+        "source_base_sha256": "954432f91bca2d6a85a152739c41ecbe9c98d9504f6d32dc69a26f26c0cd7751",
+        "base_samples_preserved_before_encode": true,
+        "source_time_edits": 0,
+        "center_pan_db": -3.01029995664,
+        "description": "Original33s voice/music master centered with standard equal-power stereo pan law; effects added separately. No narration/music EQ,reverb,time edit or per-section level reset."
+      }
     },
     "subtraction_pass": {
       "status": "passed",
-      "evidence": "No extra whooshes or decorative camera motion; GARAGE/invitation sequential; questions/title sequential; entry carries narrative handoff."
+      "evidence": "Whooshes at selected major transitions, no sound on every keyword; compact hook, one doorway-arrival composite, no trailer booms/bells/UI beeps. Room reflections affect garage effects only."
     },
     "full_speed_visual_playback": {
       "status": "not performed",
       "evidence": "Ordered encoded contact sheets/action strips inspected; not a full-speed playback review"
     },
     "full_speed_listening": {
-      "status": "not performed"
+      "status": "not performed",
+      "evidence": "No listening/perceptual audio tool available; numeric QC does not certify naturalness or audibility. User-facing export is for sound review."
     },
     "word_alignment": {
       "status": "not performed",
@@ -120,20 +128,30 @@
     "black_intervals": {
       "status": "passed",
       "evidence": "No blackdetect interval>=0.1s at pix_th0.07/pic_th0.995 over full33s"
+    },
+    "picture_preservation": {
+      "status": "passed",
+      "evidence": 990
+    },
+    "sound_design": {
+      "status": "passed",
+      "evidence": {
+        "events": 24,
+        "materials": "paper, designed resonant metal/stone, soft transition air",
+        "sources": "12 selected CC0 SFX Kit WAVs plus original deterministic modal/noise models",
+        "sync": "start_sample=round((moment-source_sync)*48000); procedural onset at planned motion/contact",
+        "speech_priority": "FX-only broad speech-band shaping and soft3dB speech activity duck",
+        "mono_rms_difference_db": -0.0005252575742583289,
+        "effects_only_peak_control_max_db": -5.992576895325733,
+        "report": "audio/sfx-report-v011.json"
+      }
     }
   },
   "limitations": [
     "Photorealistic generated assets, not documentary photography",
     "Historical mastered soundtrack stems absent; recovered first20PCM and original score reconstruction used",
     "No new full-speed listening/word-level ASR claim",
-    "Cumulative0–33 preview, not completed58s film"
-  ],
-  "delivery": {
-    "commit": "cae01d6fa495a452eeb820ece222f8b1e389184b",
-    "remote_branch_verified": true,
-    "url": "https://raw.githubusercontent.com/kiangasgaryishere/-/cae01d6fa495a452eeb820ece222f8b1e389184b/garage/video/garage-through-033s-v010.mp4",
-    "download_sha256": "fb94fe3a6cbe4d2b23081dc24e9b7901bf87cf3dcc10465cfe5258e1ad98bc83",
-    "download_matches_export": true,
-    "bytes": 37362822
-  }
+    "Cumulative0–33 preview, not completed58s film",
+    "V011 physical metal/stone/entry sounds include original designed/synthesized effects, not field-recorded garage Foley"
+  ]
 }

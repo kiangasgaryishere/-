@@ -56,13 +56,13 @@
       "end_seconds": 20
     },
     {
-      "id": "paper-doorway-wipe",
+      "id": "garage-camera-entry",
       "start_seconds": 20,
-      "end_seconds": 21
+      "end_seconds": 22.35
     },
     {
       "id": "lamp-assembly-and-long-hold",
-      "start_seconds": 21,
+      "start_seconds": 22.35,
       "end_seconds": 26.05
     },
     {
@@ -300,6 +300,366 @@
       "duration": 0.25,
       "gain": 0.016,
       "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-hook-metal-grain",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "metal-grain",
+      "moment": 0.08,
+      "sync": 0,
+      "start_sample": 3840,
+      "start": 0.08,
+      "duration": 0.48,
+      "gain": 0.2,
+      "pan": -0.1,
+      "purpose": "Close chrome/leather chair: restrained friction, not a trailer hit",
+      "license": "Original project sound design"
+    },
+    {
+      "id": "v011-hook-red-paper",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/foley-paper-slide.wav",
+      "moment": 0.65,
+      "sync": 0.006,
+      "start_sample": 30912,
+      "start": 0.644,
+      "duration": 0.492,
+      "gain": 1.8,
+      "pan": 0,
+      "purpose": "Red paper starts exposing",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-hook-reality-contact",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/impact-medium-soft.wav",
+      "moment": 0.98,
+      "sync": 0.013,
+      "start_sample": 46416,
+      "start": 0.967,
+      "duration": 0.21,
+      "gain": 0.7,
+      "pan": 0,
+      "purpose": "Question has arrived; compact tactile accent",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-opening-to-study",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-medium-soft.wav",
+      "moment": 3.72,
+      "sync": 0.229,
+      "start_sample": 167568,
+      "start": 3.491,
+      "duration": 0.543,
+      "gain": 0.78,
+      "pan": 0,
+      "purpose": "Fastest part of paper change3.35–4.10",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-pencil-strokes",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/writing-pencil-draw.wav",
+      "moment": 4.3,
+      "sync": 0,
+      "start_sample": 206400,
+      "start": 4.3,
+      "duration": 1.448,
+      "gain": 1.2,
+      "pan": -0.08,
+      "purpose": "Actual drawing interval",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-chair-build-sweep",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-medium-soft.wav",
+      "moment": 6.84,
+      "sync": 0.229,
+      "start_sample": 317328,
+      "start": 6.611,
+      "duration": 0.543,
+      "gain": 0.46,
+      "pan": 0,
+      "purpose": "Strip assembly movement",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-chair-build-contact",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/mechanical-latch-light.wav",
+      "moment": 7.15,
+      "sync": 0.052,
+      "start_sample": 340704,
+      "start": 7.098,
+      "duration": 0.112,
+      "gain": 0.95,
+      "pan": 0.08,
+      "purpose": "First central strip settles",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-object-disassembly",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-slow-medium.wav",
+      "moment": 12.78,
+      "sync": 0.438,
+      "start_sample": 592416,
+      "start": 12.342,
+      "duration": 1.002,
+      "gain": 0.85,
+      "pan": 0,
+      "purpose": "Parts separate toward exploded view",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-garage-approach",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-slow-soft.wav",
+      "moment": 16.24,
+      "sync": 0.452,
+      "start_sample": 757824,
+      "start": 15.788,
+      "duration": 1.049,
+      "gain": 0.8,
+      "pan": 0,
+      "purpose": "Parts exit, doorway arrives",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-garage-track-rattle",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "metal-track",
+      "moment": 16.4,
+      "sync": 0,
+      "start_sample": 787200,
+      "start": 16.4,
+      "duration": 0.75,
+      "gain": 0.11,
+      "pan": 0,
+      "purpose": "Designed resonant track friction while frame arrives",
+      "license": "Original project sound design"
+    },
+    {
+      "id": "v011-garage-frame-settle",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/mechanical-latch-heavy.wav",
+      "moment": 17.15,
+      "sync": 0.078,
+      "start_sample": 819456,
+      "start": 17.072,
+      "duration": 0.191,
+      "gain": 0.82,
+      "pan": 0,
+      "purpose": "Portal reaches full pose",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-garage-weight",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/impact-medium-soft.wav",
+      "moment": 17.15,
+      "sync": 0.013,
+      "start_sample": 822576,
+      "start": 17.137,
+      "duration": 0.21,
+      "gain": 0.38,
+      "pan": 0,
+      "purpose": "Low dry weight under latch; same composite event",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-garage-sign-track",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "metal-track",
+      "moment": 20.5,
+      "sync": 0,
+      "start_sample": 984000,
+      "start": 20.5,
+      "duration": 0.9,
+      "gain": 0.045,
+      "pan": 0,
+      "purpose": "Sign rises20.5–21.4; not a falsely moving full shutter",
+      "license": "Original project sound design"
+    },
+    {
+      "id": "v011-garage-entry-air",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "entry-air",
+      "moment": 20.1,
+      "sync": 0,
+      "start_sample": 964800,
+      "start": 20.1,
+      "duration": 2.25,
+      "gain": 0.052,
+      "pan": 0,
+      "purpose": "Continuous eased camera movement through aperture",
+      "license": "Original project sound design"
+    },
+    {
+      "id": "v011-garage-entry-sweep",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-slow-soft.wav",
+      "moment": 21.32,
+      "sync": 0.452,
+      "start_sample": 1001664,
+      "start": 20.868,
+      "duration": 1.049,
+      "gain": 0.85,
+      "pan": 0,
+      "purpose": "Fast part of camera entry",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-lamp-base-contact",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/impact-light-firm.wav",
+      "moment": 21.027,
+      "sync": 0.011,
+      "start_sample": 1008768,
+      "start": 21.016,
+      "duration": 0.099,
+      "gain": 0.58,
+      "pan": 0.06,
+      "purpose": "First contact at mapped lamp time",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-lamp-arm-joint",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/mechanical-latch-light.wav",
+      "moment": 22.007,
+      "sync": 0.052,
+      "start_sample": 1053840,
+      "start": 21.955,
+      "duration": 0.112,
+      "gain": 0.95,
+      "pan": 0,
+      "purpose": "Arm contact",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-lamp-shade-joint",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/mechanical-switch-heavy.wav",
+      "moment": 23.056,
+      "sync": 0.021,
+      "start_sample": 1105680,
+      "start": 23.035,
+      "duration": 0.099,
+      "gain": 0.56,
+      "pan": -0.1,
+      "purpose": "Shade contact",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-lamp-light-switch",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/mechanical-switch-light.wav",
+      "moment": 24.05,
+      "sync": 0.01,
+      "start_sample": 1153920,
+      "start": 24.04,
+      "duration": 0.032,
+      "gain": 0.92,
+      "pan": -0.1,
+      "purpose": "Red light appears",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-light-to-house",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/whoosh-slow-soft.wav",
+      "moment": 26.12,
+      "sync": 0.452,
+      "start_sample": 1232064,
+      "start": 25.668,
+      "duration": 1.049,
+      "gain": 1.0,
+      "pan": 0,
+      "purpose": "Soft focus/light handoff25.4–26.85",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-foundation-contact",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "stone-contact",
+      "moment": 27.0,
+      "sync": 0,
+      "start_sample": 1296000,
+      "start": 27.0,
+      "duration": 0.48,
+      "gain": 0.28,
+      "pan": 0,
+      "purpose": "Heavy short dry foundation settle",
+      "license": "Original project sound design"
+    },
+    {
+      "id": "v011-wall-contact",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/foley-wood-touch.wav",
+      "moment": 28.65,
+      "sync": 0.012,
+      "start_sample": 1374624,
+      "start": 28.638,
+      "duration": 0.128,
+      "gain": 0.72,
+      "pan": 0,
+      "purpose": "Designed matte building-material contact",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-title-paper",
+      "revision": "v011",
+      "kind": "library",
+      "asset": "audio/sfx-v011/foley-paper-slide.wav",
+      "moment": 29.8,
+      "sync": 0.006,
+      "start_sample": 1430112,
+      "start": 29.794,
+      "duration": 0.492,
+      "gain": 1.8,
+      "pan": 0,
+      "purpose": "Final red title support arrives",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "v011-roof-contact",
+      "revision": "v011",
+      "kind": "procedural",
+      "asset": "stone-contact",
+      "moment": 30.2,
+      "sync": 0,
+      "start_sample": 1449600,
+      "start": 30.2,
+      "duration": 0.34,
+      "gain": 0.2,
+      "pan": 0,
+      "purpose": "Lighter dry roof fit; no extra bass boom",
+      "license": "Original project sound design"
     }
   ],
   "milestones": [
@@ -331,7 +691,7 @@
     29.8,
     30.2
   ],
-  "notes": "V01033s revision: one/two-word editorial groups, physically mounted garage sign, slow masked aperture push into lamp. Restrained study/house framing only; voice/music and construction timing preserved. No ASR timing claim.",
+  "notes": "V01033s revision: one/two-word editorial groups, physically mounted garage sign, slow masked aperture push into lamp. Restrained study/house framing only; voice/music and construction timing preserved. No ASR timing claim. V011 audio-only revision: designed material hook, garage frame/sign/entry, selected soft whooshes and physical contacts; V010 picture copied exactly.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer",
   "editorial_texts": [
     {
@@ -433,14 +793,14 @@
       "start_seconds": 20.1,
       "end_seconds": 22.35,
       "type": "quintic exponential frontal camera push through masked physical doorway, exact-scale interior continuation",
-      "audio": "Exact V009 AAC; global source timing unchanged"
+      "audio": "V011 continuous original voice/music plus selected material effects and soft transition air; no source-time edit"
     },
     {
       "id": "lamp-light-to-house",
       "start_seconds": 25.4,
       "end_seconds": 26.85,
       "type": "quintic eased optical dissolve, outgoing defocus and restrained push, incoming focus resolve, localized red light/door match",
-      "audio": "Continuous original source narration and reconstructed score through33s, house contacts retimed"
+      "audio": "V011 continuous original voice/music plus selected material effects and soft transition air; no source-time edit"
     }
   ],
   "typography": {
@@ -670,5 +1030,105 @@
         1
       ]
     }
-  ]
+  ],
+  "sound_design_v011": {
+    "base_master": "audio/mix-033s-v009.wav",
+    "base_sha256": "954432f91bca2d6a85a152739c41ecbe9c98d9504f6d32dc69a26f26c0cd7751",
+    "picture_source": "video/garage-through-033s-v010.mp4",
+    "seed": 110326,
+    "sample_rate": 48000,
+    "source_samples": 1584000,
+    "sources": {
+      "foley-paper-slide": {
+        "asset": "audio/sfx-v011/foley-paper-slide.wav",
+        "sha256": "5c46a7e86caeb6f71249fa294b5e654866f283c0470d39ab756b671f7c4c2e17",
+        "source": "sounds/foley/foley-paper-slide.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.006
+      },
+      "impact-medium-soft": {
+        "asset": "audio/sfx-v011/impact-medium-soft.wav",
+        "sha256": "88fa4920ffef8f6295df929e9f0d671fafdfb6f9d5a7f82840b755adf9fb7d7f",
+        "source": "sounds/impacts/impact-medium-soft.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.013
+      },
+      "whoosh-medium-soft": {
+        "asset": "audio/sfx-v011/whoosh-medium-soft.wav",
+        "sha256": "a114611a09e02ab26cfbd8d796279eac358b6df4c3923db3f269ac34c340eeac",
+        "source": "sounds/whooshes/whoosh-medium-soft.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.229
+      },
+      "writing-pencil-draw": {
+        "asset": "audio/sfx-v011/writing-pencil-draw.wav",
+        "sha256": "d70df183a5267ad0434bc51e1477b089aadbf6690b383ebd8a4014843dbaaff9",
+        "source": "sounds/writing-and-drawing/writing-pencil-draw.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0
+      },
+      "mechanical-latch-light": {
+        "asset": "audio/sfx-v011/mechanical-latch-light.wav",
+        "sha256": "6e52e1c07a6d175cc6d5beb6e522621f8296af0274db66a48f5c7f2f49f9d3b2",
+        "source": "sounds/mechanical/mechanical-latch-light.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.052
+      },
+      "whoosh-slow-soft": {
+        "asset": "audio/sfx-v011/whoosh-slow-soft.wav",
+        "sha256": "9eadf61f7476f2ca0a6d6acd95a7be26a2ac57ed6c0ea7e76473051a926a2baa",
+        "source": "sounds/whooshes/whoosh-slow-soft.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.452
+      },
+      "mechanical-latch-heavy": {
+        "asset": "audio/sfx-v011/mechanical-latch-heavy.wav",
+        "sha256": "11e11c062b5cb8be8079000faeac50934eb56547868c5c9c89130ec63b5ecd53",
+        "source": "sounds/mechanical/mechanical-latch-heavy.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.078
+      },
+      "impact-light-firm": {
+        "asset": "audio/sfx-v011/impact-light-firm.wav",
+        "sha256": "751a1ec3b67f4f11a90e410d0ada78c0f0e64859fb06352994181abe737725c5",
+        "source": "sounds/impacts/impact-light-firm.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.011
+      },
+      "mechanical-switch-heavy": {
+        "asset": "audio/sfx-v011/mechanical-switch-heavy.wav",
+        "sha256": "8efa3f5ffb984eb05f381f39c21d6588c841f13941673657f0648e6511e81e17",
+        "source": "sounds/mechanical/mechanical-switch-heavy.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.021
+      },
+      "mechanical-switch-light": {
+        "asset": "audio/sfx-v011/mechanical-switch-light.wav",
+        "sha256": "84efeec4a0cf157aa78169a55fc272b9a1d473932358c0db68d676ac03f6b5f9",
+        "source": "sounds/mechanical/mechanical-switch-light.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.01
+      },
+      "foley-wood-touch": {
+        "asset": "audio/sfx-v011/foley-wood-touch.wav",
+        "sha256": "bcd88241dcd12a07ce335806e3d58f6deb85cb6971aa997dfa984edc1bc81db7",
+        "source": "sounds/foley/foley-wood-touch.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.012
+      },
+      "whoosh-slow-medium": {
+        "asset": "audio/sfx-v011/whoosh-slow-medium.wav",
+        "sha256": "abf3f8250bee145041d0d6786f34a5cbbfe14d4e9526e3395fc5a162a39808a9",
+        "source": "sounds/whooshes/whoosh-slow-medium.wav",
+        "license": "CC0-1.0",
+        "sync_seconds": 0.438
+      }
+    },
+    "speech_duck_db": -3,
+    "effect_bus_hp_hz": 65,
+    "effect_bus_lp_hz": 6500,
+    "fx_only_peak_ceiling": 0.87,
+    "room_scope": "Short early reflections on garage effects only; source narration/music stay dry/unchanged",
+    "stereo_center_pan_db": -3.01029995664
+  }
 }

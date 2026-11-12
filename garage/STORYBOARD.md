@@ -30,3 +30,6 @@ V009 expands cumulative30→33. Approved lamp timing/long hold and cinematic25.4
 
 
 V010 supersedes prior typography throughout0–33 and garage handoff18.55–22.35. Complete timed highlights and camera tracks: timeline.json, TREATMENT-v010.md. GARAGE17.05–18.95 then بزنیم گاراژ19.1–21.25, sign lifts20.5–21.4, camera pushes20.1–22.35 through masked opening to lamp at exact screen scale. Lamp assembly retains original global timeline; floor/base visible first, arm unfolds during entry. No extra transition wipe. خیال؟/سؤال؟26.55–29.5, then final ایده عجیب29.8–33; never simultaneous. House component/hold timings unchangedV009.
+
+
+V011 audio-only: V010 picture packets copied exactly. Hook0.08/0.65/0.98; paper/study3.72/4.3; chair6.84/7.15; separation12.78; doorway16.24/16.4/17.15; sign20.5–21.4, entry20.1–22.35; lamp21.027/22.007/23.056/24.05; handoff26.12; foundation27/body28.65/roof30.2; final paper29.8. Full cue sync offsets/gains in timeline.json. No extra effect on every word.

@@ -1,0 +1,256 @@
+{
+  "source_base_sha256": "954432f91bca2d6a85a152739c41ecbe9c98d9504f6d32dc69a26f26c0cd7751",
+  "samples": 1584000,
+  "sample_rate": 48000,
+  "channels": 2,
+  "peak": 0.615182899632283,
+  "center_pan_db": -3.01029995664,
+  "level_reference": "Cue metrics are mono-equivalent before equal-power stereo center pan",
+  "base_samples_preserved_before_encode": true,
+  "voice_source_time_edits": 0,
+  "max_fx_only_headroom_reduction_db": -5.992576895325733,
+  "stereo_mono_rms_difference_db": -0.0005252575742583289,
+  "events": [
+    {
+      "id": "v011-hook-metal-grain",
+      "start_sample": 3840,
+      "sync_sample": 3840,
+      "source_sync_sample": 0,
+      "raw_peak": 0.2,
+      "duration_samples": 23040,
+      "final_fx_bus_rms_dbfs": -30.667036566401205,
+      "base_rms_dbfs": -15.96021312606343
+    },
+    {
+      "id": "v011-hook-red-paper",
+      "start_sample": 30912,
+      "sync_sample": 31200,
+      "source_sync_sample": 288,
+      "raw_peak": 0.23528552055358887,
+      "duration_samples": 23592,
+      "final_fx_bus_rms_dbfs": -31.83328361895217,
+      "base_rms_dbfs": -12.600719932663422
+    },
+    {
+      "id": "v011-hook-reality-contact",
+      "start_sample": 46416,
+      "sync_sample": 47040,
+      "source_sync_sample": 624,
+      "raw_peak": 0.27225865125656123,
+      "duration_samples": 10080,
+      "final_fx_bus_rms_dbfs": -30.75226342604339,
+      "base_rms_dbfs": -10.677449178279074
+    },
+    {
+      "id": "v011-opening-to-study",
+      "start_sample": 167568,
+      "sync_sample": 178560,
+      "source_sync_sample": 10992,
+      "raw_peak": 0.13299272775650026,
+      "duration_samples": 26040,
+      "final_fx_bus_rms_dbfs": -35.69458755863573,
+      "base_rms_dbfs": -15.781869715953082
+    },
+    {
+      "id": "v011-pencil-strokes",
+      "start_sample": 206400,
+      "sync_sample": 206400,
+      "source_sync_sample": 0,
+      "raw_peak": 0.16236562728881834,
+      "duration_samples": 69480,
+      "final_fx_bus_rms_dbfs": -37.519050030916446,
+      "base_rms_dbfs": -15.315345305482747
+    },
+    {
+      "id": "v011-chair-build-sweep",
+      "start_sample": 317328,
+      "sync_sample": 328320,
+      "source_sync_sample": 10992,
+      "raw_peak": 0.0784316086769104,
+      "duration_samples": 26040,
+      "final_fx_bus_rms_dbfs": -37.450911831014665,
+      "base_rms_dbfs": -21.68745646413925
+    },
+    {
+      "id": "v011-chair-build-contact",
+      "start_sample": 340704,
+      "sync_sample": 343200,
+      "source_sync_sample": 2496,
+      "raw_peak": 0.23809070587158201,
+      "duration_samples": 5376,
+      "final_fx_bus_rms_dbfs": -33.20302098726357,
+      "base_rms_dbfs": -19.30746783700493
+    },
+    {
+      "id": "v011-object-disassembly",
+      "start_sample": 592416,
+      "sync_sample": 613440,
+      "source_sync_sample": 21024,
+      "raw_peak": 0.24521583914756775,
+      "duration_samples": 48096,
+      "final_fx_bus_rms_dbfs": -36.44252774866737,
+      "base_rms_dbfs": -16.173819565632837
+    },
+    {
+      "id": "v011-garage-approach",
+      "start_sample": 757824,
+      "sync_sample": 779520,
+      "source_sync_sample": 21696,
+      "raw_peak": 0.13098546743392944,
+      "duration_samples": 56568,
+      "final_fx_bus_rms_dbfs": -35.31466802988126,
+      "base_rms_dbfs": -16.10324093422924
+    },
+    {
+      "id": "v011-garage-track-rattle",
+      "start_sample": 787200,
+      "sync_sample": 787200,
+      "source_sync_sample": 0,
+      "raw_peak": 0.1110060968421626,
+      "duration_samples": 42240,
+      "final_fx_bus_rms_dbfs": -34.062773260369454,
+      "base_rms_dbfs": -13.72477063155501
+    },
+    {
+      "id": "v011-garage-frame-settle",
+      "start_sample": 819456,
+      "sync_sample": 823200,
+      "source_sync_sample": 3744,
+      "raw_peak": 0.27902212539911264,
+      "duration_samples": 15384,
+      "final_fx_bus_rms_dbfs": -32.258650308460716,
+      "base_rms_dbfs": -12.329468211550454
+    },
+    {
+      "id": "v011-garage-weight",
+      "start_sample": 822576,
+      "sync_sample": 823200,
+      "source_sync_sample": 624,
+      "raw_peak": 0.14779755353927612,
+      "duration_samples": 16320,
+      "final_fx_bus_rms_dbfs": -32.6417829435899,
+      "base_rms_dbfs": -12.98495405515296
+    },
+    {
+      "id": "v011-garage-sign-track",
+      "start_sample": 984000,
+      "sync_sample": 984000,
+      "source_sync_sample": 0,
+      "raw_peak": 0.044680018114351835,
+      "duration_samples": 49440,
+      "final_fx_bus_rms_dbfs": -32.88060772109367,
+      "base_rms_dbfs": -20.03198083158015
+    },
+    {
+      "id": "v011-garage-entry-air",
+      "start_sample": 964800,
+      "sync_sample": 964800,
+      "source_sync_sample": 0,
+      "raw_peak": 0.051569879512700735,
+      "duration_samples": 114240,
+      "final_fx_bus_rms_dbfs": -35.97862622749605,
+      "base_rms_dbfs": -14.908019410138941
+    },
+    {
+      "id": "v011-garage-entry-sweep",
+      "start_sample": 1001664,
+      "sync_sample": 1023360,
+      "source_sync_sample": 21696,
+      "raw_peak": 0.13917205914855002,
+      "duration_samples": 56568,
+      "final_fx_bus_rms_dbfs": -33.167262402051676,
+      "base_rms_dbfs": -14.088448944288395
+    },
+    {
+      "id": "v011-lamp-base-contact",
+      "start_sample": 1008768,
+      "sync_sample": 1009296,
+      "source_sync_sample": 528,
+      "raw_peak": 0.16253142118453978,
+      "duration_samples": 4728,
+      "final_fx_bus_rms_dbfs": -29.2399480808724,
+      "base_rms_dbfs": -22.501708143573595
+    },
+    {
+      "id": "v011-lamp-arm-joint",
+      "start_sample": 1053840,
+      "sync_sample": 1056336,
+      "source_sync_sample": 2496,
+      "raw_peak": 0.23809070587158201,
+      "duration_samples": 5376,
+      "final_fx_bus_rms_dbfs": -33.20641786273932,
+      "base_rms_dbfs": -10.881759129307566
+    },
+    {
+      "id": "v011-lamp-shade-joint",
+      "start_sample": 1105680,
+      "sync_sample": 1106688,
+      "source_sync_sample": 1008,
+      "raw_peak": 0.27694986343383793,
+      "duration_samples": 4728,
+      "final_fx_bus_rms_dbfs": -31.915683141564166,
+      "base_rms_dbfs": -16.75334228453939
+    },
+    {
+      "id": "v011-lamp-light-switch",
+      "start_sample": 1153920,
+      "sync_sample": 1154400,
+      "source_sync_sample": 480,
+      "raw_peak": 0.40599789619445803,
+      "duration_samples": 1536,
+      "final_fx_bus_rms_dbfs": -26.760711827140376,
+      "base_rms_dbfs": -21.25180665398549
+    },
+    {
+      "id": "v011-light-to-house",
+      "start_sample": 1232064,
+      "sync_sample": 1253760,
+      "source_sync_sample": 21696,
+      "raw_peak": 0.1648550033569336,
+      "duration_samples": 50328,
+      "final_fx_bus_rms_dbfs": -35.38693438551221,
+      "base_rms_dbfs": -15.195658724531986
+    },
+    {
+      "id": "v011-foundation-contact",
+      "start_sample": 1296000,
+      "sync_sample": 1296000,
+      "source_sync_sample": 0,
+      "raw_peak": 0.28,
+      "duration_samples": 23040,
+      "final_fx_bus_rms_dbfs": -35.517985236211615,
+      "base_rms_dbfs": -14.80226459375459
+    },
+    {
+      "id": "v011-wall-contact",
+      "start_sample": 1374624,
+      "sync_sample": 1375200,
+      "source_sync_sample": 576,
+      "raw_peak": 0.18828454971313477,
+      "duration_samples": 6120,
+      "final_fx_bus_rms_dbfs": -30.778104787307647,
+      "base_rms_dbfs": -21.157555942062135
+    },
+    {
+      "id": "v011-title-paper",
+      "start_sample": 1430112,
+      "sync_sample": 1430400,
+      "source_sync_sample": 288,
+      "raw_peak": 0.23528552055358887,
+      "duration_samples": 23592,
+      "final_fx_bus_rms_dbfs": -32.80806457066029,
+      "base_rms_dbfs": -14.482780115595865
+    },
+    {
+      "id": "v011-roof-contact",
+      "start_sample": 1449600,
+      "sync_sample": 1449600,
+      "source_sync_sample": 0,
+      "raw_peak": 0.2,
+      "duration_samples": 16320,
+      "final_fx_bus_rms_dbfs": -36.16436960950888,
+      "base_rms_dbfs": -14.248644169874222
+    }
+  ],
+  "listening_review": "not performed; no audio listening tool available"
+}

@@ -23,3 +23,6 @@ V009 extends original source narration and continuous94BPM score to33seconds, sa
 
 
 V010 visual revision only: copy complete V009AAC packets and timestamps, including priming metadata. No narration, music or Foley edits; no extra camera swoosh. Verify both packet hash/timing and decodedPCM equality. Existing33s continuous score, voice and assembly contacts remain on the same global source clock. No new listening/ASR claim.
+
+
+V011 implements user-approved material SFX proposal. Exact24layer events in timeline.json, twelve selected CC0 files in audio/sfx-v011 plus original modal/noise metal,stone,entry air. Original V00933s lossless master retained sample-for-sample before equal-power stereo center pan; effects-only broad EQ, soft3dB speech duck, local peak control. Short garage early reflections only on effects. Encoded output−15.57LUFS/−3.83dBTP; mono fold-down loss0.00053dB. No new music or speech edits. Listening unavailable/not performed; user sound review remains perceptual check.

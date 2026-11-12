@@ -23,3 +23,6 @@ V007 house-v007.png: new photorealistic generated architectural cutout,1024x1536
 V009 Persian typography: Lalezar Regular by Borna Izadpanah, official Google Fonts distribution (https://github.com/google/fonts/tree/main/ofl/lalezar), source project https://github.com/BornaIz/Lalezar. Unmodified TTF included with SIL OFL1.1 in fonts/LICENSE-Lalezar.txt. No synthetic bold or horizontal distortion. Previous Noto Sans Arabic retained as a nonvisible metric reference; English GARAGE face unchanged. No new visual assets.
 
 V010: no new third-party media. Reuses licensed fonts and generated photographic cutouts above. New Canvas camera/keyword choreography, complete V009AAC preserved. Current renderer commit f2471cacca270963baa2e1c72b8a7b25dfe0d95c (Lemo Opuscar/MIT).
+
+
+V011 imports12 unmodified selected synthesized WAVs from SFX Kit CC0 commit92780e7ab0cdfb557497a988089c47f46e8c7412; license in audio/sfx-v011/LICENSE-CC0.txt and individual source hashes in timeline.json. Metal-grain/metal-track/stone-contact/entry-air are original seeded DSP sound design, not recorded roller-door/stone Foley. No new third-party services, paid sound generation or music.
