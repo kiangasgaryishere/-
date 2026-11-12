@@ -19,7 +19,7 @@ const tear=[];for(let i=-100;i<=1180;i+=12)tear.push([i,1350-i*.25+(rng()-.5)*16
 function redSheet(reveal=1,height=330,cy=960,width=1080){x.save();x.beginPath();const left=540-width/2,right=540+width/2;for(let i=0;i<=50;i++){const px=left+(right-left)*i/50;const jag=Math.sin(i*7.31)*7+Math.sin(i*2.17)*4;const yy=cy-height/2-(px-540)*.07+jag;i?x.lineTo(px,yy):x.moveTo(px,yy)}for(let i=50;i>=0;i--){const px=left+(right-left)*i/50;x.lineTo(px,cy+height/2-(px-540)*.07+Math.sin(i*8.13)*8)}x.closePath();x.save();x.clip();x.beginPath();x.rect(left,0,width*reveal,H);x.clip();x.fillStyle=RED;x.fillRect(0,0,W,H);x.globalCompositeOperation='multiply';x.globalAlpha=.06;x.drawImage(paper,0,0);x.restore();x.restore()}
 function photo(cx,cy,width,rot=0,opacity=1){x.save();x.globalAlpha=opacity;x.translate(cx,cy);x.rotate(rot);x.shadowColor='rgba(0,0,0,.65)';x.shadowBlur=28;x.shadowOffsetY=18;const h=width*chair.height/chair.width;x.drawImage(chair,-width/2,-h/2,width,h);x.restore()}
 // Preserve the requested +30% optical glyph height across a typeface change.
-const typeMetrics=new Map();
+const typeMetrics=new Map();let actualText=[];
 function labelFont(text,size){
  const key=text+'|'+size;if(typeMetrics.has(key))return typeMetrics.get(key);
  x.save();x.direction='rtl';x.font=`700 ${size}px GarageFaPrevious`;const old=x.measureText(text),height=old.actualBoundingBoxAscent+old.actualBoundingBoxDescent;
@@ -27,7 +27,7 @@ function labelFont(text,size){
  for(let i=0;i<3;i++){x.font=`400 ${px}px GarageFa`;metric=x.measureText(text);const h=metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent;if(i<2&&h>0)px*=height*1.3/h}
  const result={px,oldHeight:height,newHeight:metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent,width:metric.width,ratio:(metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent)/height};typeMetrics.set(key,result);x.restore();return result;
 }
-function type(s,cx,cy,size=72,alpha=1){x.save();x.globalAlpha=alpha;x.direction='rtl';x.textAlign='center';x.textBaseline='alphabetic';const face=labelFont(s,size);x.font=`400 ${face.px}px GarageFa`;x.fillStyle=WHITE;const m=x.measureText(s);x.fillText(s,cx,cy+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);x.restore()}
+function type(s,cx,cy,size=72,alpha=1){if(alpha<=0)return;if(alpha>.05)actualText.push(s);x.save();x.globalAlpha=alpha;x.direction='rtl';x.textAlign='center';x.textBaseline='alphabetic';const face=labelFont(s,size);x.font=`400 ${face.px}px GarageFa`;x.fillStyle=WHITE;const m=x.measureText(s);x.fillText(s,cx,cy+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);x.restore()}
 function path(points,progress,color=WHITE,width=3){let lengths=[],total=0;for(let i=1;i<points.length;i++){const d=Math.hypot(points[i][0]-points[i-1][0],points[i][1]-points[i-1][1]);lengths.push(d);total+=d}let remain=total*cl(progress);x.strokeStyle=color;x.lineWidth=width;x.lineJoin='round';x.lineCap='round';x.beginPath();x.moveTo(...points[0]);for(let i=1;i<points.length;i++){if(remain<=0)break;const z=Math.min(1,remain/lengths[i-1]);x.lineTo(lerp(points[i-1][0],points[i][0],z),lerp(points[i-1][1],points[i][1],z));remain-=lengths[i-1]}x.stroke()}
 const lines=[[[270,690],[310,400],[770,370],[820,640]],[[280,690],[820,640],[760,835],[230,870],[280,690]],[[230,870],[190,1230],[380,1270],[420,1170]],[[760,835],[800,1250],[600,1340],[590,940]],[[270,690],[180,650],[130,720],[125,1050],[210,1120]],[[820,640],[890,620],[930,700],[930,1150],[800,1250]],[[310,400],[345,430],[780,405]],[[330,480],[320,630],[770,600],[780,445]],[[280,740],[760,690],[725,800],[250,830]]];
 function sketch(t){x.save();const q=e(t,4.05,5.9);x.beginPath();x.rect(70,1550-1300*q,940,1300*q);x.clip();x.globalCompositeOperation='screen';x.globalAlpha=.82;const w=875,h=w*study.height/study.width;x.drawImage(study,540-w/2,1035-h/2,w,h);x.restore();x.save();x.setLineDash([9,14]);x.globalAlpha=.26;path([[150,1490],[930,1490]],e(t,5,5.6),WHITE,1.2);path([[980,550],[980,1430]],e(t,5.2,5.8),WHITE,1.2);x.setLineDash([]);x.restore()}
@@ -37,15 +37,15 @@ window.render=function(t){x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);x.s
  if(t<T.shots[0].end_seconds){
    const z=e(t,0,T.shots[0].end_seconds),w=lerp(1530,1110,z),cx=lerp(480,540,z),cy=lerp(1070,1030,z);
    photo(cx,cy,w,lerp(-.045,-.015,z));
-   if(t>.65){const q=e(t,.65,1.25);redSheet(q,330,960,1080);if(t>.95)type('واقعی؟',540,960,184,e(t,.95,1.3))}
+   if(t>.65){const q=e(t,.65,1.25);redSheet(q,330,960,1080);}
    corner(86,230);corner(994,1640,-1);
  }else if(t<T.shots[1].end_seconds){
    const q=e(t,T.shots[0].end_seconds,T.shots[1].end_seconds);photo(540,1030,1110,-.015);
    redSheet(1,lerp(330,1050,q),lerp(960,1010,q),1080);
-   if(q<.45)type('واقعی؟',540,960,184,1-e(q,0,.45));
+
  }else if(t<T.shots[2].end_seconds){
    redSheet(1,1050,1010,1080);
-   sketch(t);if(t<5.2)type('هیچ',540,350,76,1-e(t,4.65,5.2));
+   sketch(t);
  }else{
    const q=e(t,T.shots[2].end_seconds,7.85),grow=e(t,T.shots[2].end_seconds,10);const cx=540,cy=1035,w=850+25*grow;
    redSheet(1,lerp(1050,490,e(t,T.shots[2].end_seconds,8.2)),lerp(1010,1090,e(t,T.shots[2].end_seconds,8.2)),1080);
@@ -64,7 +64,7 @@ opening(10-1/30000);const held=document.createElement('canvas');held.width=W;hel
 function sprite(i,cx,cy,w,angle=0,alpha=1){x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.rotate(angle);x.shadowColor='rgba(0,0,0,.5)';x.shadowBlur=22;x.shadowOffsetY=12;const sw=parts.width/3,sh=parts.height/2;x.drawImage(parts,(i%3)*sw,Math.floor(i/3)*sh,sw,sh,-w/2,-w*sh/sw/2,w,w*sh/sw);x.restore()}
 const exploded=[[510,560,600,-.045],[520,960,620,.025],[850,1000,430,.06],[230,1100,430,-.08],[190,750,350,-.13],[880,730,350,.12]];
 function explodedView(t){const a=e(t,12,13.7),settle=e(t,13.7,15.5);for(let i=0;i<6;i++){const [tx,ty,tw,rot]=exploded[i];sprite(i,lerp(540,tx,a),lerp(1040,ty,a),lerp(300,tw,a),rot*a+Math.sin(i*2.3+t*.4)*.012*settle,e(t,12+i*.045,12.35+i*.045))}x.save();x.globalAlpha=.35*e(t,13.2,13.8);x.setLineDash([7,12]);for(const [a,b] of [[[230,980],[230,860]],[[850,880],[850,820]],[[530,760],[530,860]]])path([a,b],1,WHITE,1.2);x.setLineDash([]);x.restore()}
-function garageWord(cx,cy,size,alpha=1){x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.scale(.76,1);x.font=`bold ${size}px GarageLatin`;x.textAlign='center';x.textBaseline='middle';x.fillStyle=WHITE;x.fillText('GARAGE',0,0);x.restore()}
+function garageWord(cx,cy,size,alpha=1){if(alpha<=0)return;if(alpha>.05)actualText.push('GARAGE');x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.scale(.76,1);x.font=`bold ${size}px GarageLatin`;x.textAlign='center';x.textBaseline='middle';x.fillStyle=WHITE;x.fillText('GARAGE',0,0);x.restore()}
 function master(t){
  if(t<10){opening(t);return}
  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
@@ -82,18 +82,18 @@ function master(t){
   for(let i=0;i<6;i++){const [tx,ty,tw,rot]=exploded[i];const side=i%2?-1:1;sprite(i,lerp(tx,540+side*(510+i*35),q),lerp(ty,650+(i%3)*300,q),lerp(tw,260,q),lerp(rot,side*.15,q),1-q)}
   const a=e(t,16.1,17.15);const w=lerp(360,1160,a),h=w*portal.height/portal.width;x.save();x.globalAlpha=a;x.translate(540,1030);x.rotate(lerp(-.04,0,a));x.drawImage(portal,-w/2,-h/2,w,h);x.restore();
   // Red is physically behind the doorway, revealed through its opening.
-  if(t>17){const a=e(t,17,18);x.save();x.globalAlpha=a;x.beginPath();x.rect(230,960,620,310*a);x.clip();redSheet(1,310,1110,620);x.restore()}
+
  }else{
   const q=e(t,18.55,19.65),w=1160+70*q,h=w*portal.height/portal.width;redSheet(1,490,1040,1080);x.save();x.translate(540,1030);x.drawImage(portal,-w/2,-h/2,w,h);x.restore();
   // The same red support becomes the space inside the GARAGE entrance, not a stray stroke.
   x.save();x.beginPath();x.rect(220-20*q,940,640+40*q,340);x.clip();redSheet(1,340,1110,680);x.restore();
-  garageWord(540,1060,lerp(100,180,e(t,18.75,19.45)),e(t,18.75,19.25));
-  if(t>19.2)type('بزنیم گاراژ',540,1190,62,e(t,19.2,19.6));
+
+
  }
 }
 // v004: the doorway opens onto a single material work surface.
 const through20=master;
-through20(20);const doorwayFrame=document.createElement('canvas');doorwayFrame.width=W;doorwayFrame.height=H;doorwayFrame.getContext('2d').drawImage(c,0,0);
+
 // V006: independent photographic parts, not a camera pan across a still.
 function layer(img,box,src,dst,scale,rot=0,alpha=1,ctx=x){
  if(alpha<=0)return;ctx.save();ctx.globalAlpha=alpha;ctx.translate(...dst);ctx.rotate(rot);ctx.scale(scale,scale);ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=16;ctx.shadowOffsetY=10;ctx.drawImage(img,...box,box[0]-src[0],box[1]-src[1],box[2],box[3]);ctx.restore();
@@ -136,19 +136,60 @@ function cinematicHandoff(t){
  x.save();x.globalAlpha=1-opticalEase(t,25.65,26.7);x.filter=`blur(${16*q}px)`;x.translate(405-30*q,1090-10*q);x.scale(1+.035*q,1+.035*q);x.translate(-405,-1090);x.drawImage(lampPass,0,0);x.restore();
  if(t>=26.05){x.save();x.globalAlpha=.75+.25*u;x.filter=`blur(${10*(1-u)}px)`;x.translate(540+20*(1-u),1190+12*(1-u));x.scale(.985+.015*u,.985+.015*u);x.translate(-540,-1190);x.drawImage(housePass,0,0);x.restore()}
 }
-function continuation(t){
- if(t<20){through20(t);return}
+// V010 editorial and camera controller: one focus, at most two visible words.
+const cameraPass=document.createElement('canvas'),interiorPass=document.createElement('canvas');
+for(const pass of [cameraPass,interiorPass]){pass.width=W;pass.height=H}
+const cameraCtx=cameraPass.getContext('2d'),interiorCtx=interiorPass.getContext('2d');
+function activeHighlight(t){return T.highlights.find(h=>t>=h.start&&t<h.end)}
+function highlightAlpha(t,h){return e(t,h.start,h.start+.18)*(h.end>=33?1:1-e(t,h.end-.18,h.end))}
+function headline(text,cx,cy,size,alpha,maxWidth=880){const face=labelFont(text,size),fit=Math.min(1,maxWidth/face.width);x.save();x.translate(cx,cy);x.scale(fit,fit);type(text,0,0,size,alpha);x.restore()}
+function cameraState(t){
+ if(t>=4.1&&t<6.55){const q=opticalEase(t,4.1,6.55);return {z:1+.045*q,y:-12*q}}
+ if(t>=6.55&&t<9.8){const q=1-opticalEase(t,6.55,9.8);return {z:1+.045*q,y:-12*q}}
+ if(t>=28.25&&t<30.2)return {z:1+.025*opticalEase(t,28.25,30.2),y:0};
+ if(t>=30.2)return {z:1+.025*(1-opticalEase(t,30.2,33)),y:0};
+ return {z:1,y:0};
+}
+function applyCamera(t){const cam=cameraState(t);if(cam.z===1&&cam.y===0)return;cameraCtx.clearRect(0,0,W,H);cameraCtx.drawImage(c,0,0);x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);x.save();x.translate(540,960+cam.y);x.scale(cam.z,cam.z);x.translate(-540,-960);x.drawImage(cameraPass,0,0);x.restore()}
+function garageGeometry(t){
+ const w=t<18.55?lerp(360,1160,e(t,16.1,17.15)):lerp(1160,1230,e(t,18.55,19.65)),sc=w/1536,hh=1024*sc,left=540-w/2,top=1030-hh/2;
+ const ap={x:left+399*sc,y:top+405*sc,w:741*sc,h:425*sc};ap.cx=ap.x+ap.w/2;ap.cy=ap.y+ap.h/2;return {w,sc,hh,left,top,ap};
+}
+function garageSign(t){
+ const h=activeHighlight(t);if(!h||h.kind!=='garage')return;const g=garageGeometry(t),ap=g.ap,a=highlightAlpha(t,h),lift=260*opticalEase(t,20.5,21.4),cy=ap.cy-5-lift;
+ x.save();x.beginPath();x.rect(ap.x,ap.y,ap.w,ap.h);x.clip();x.globalAlpha=a;
+ x.save();x.translate(ap.cx-540,0);redSheet(1,200*g.w/1230,cy,ap.w-14);x.restore();
+ if(h.texts[0]==='GARAGE')garageWord(ap.cx,cy,180*g.w/1230,a);else headline(h.texts[0],ap.cx,cy,76,a,ap.w-34);
+ x.restore();
+}
+function garageEntry(t){
  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
- if(t<21.0){x.drawImage(doorwayFrame,0,0);for(let i=0;i<5;i++){const q=e(t,20+i*.045,20.65+i*.045);x.save();x.beginPath();x.rect(0,400+i*220,W*q,225);x.clip();x.drawImage(paper,0,0);x.restore()}}
- if(t<25.4){
-  const on=e(t,23.95,24.1);x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();
-  const lampTime=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lampTime);
- }else if(t<26.85){cinematicHandoff(t)}else{house(t)}
- if(t>=26.05){
-  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);type('خیال؟',750,420+18*(1-a),68,a);type('سؤال؟',320,420+18*(1-b),68,b);
-  const k=e(t,29.8,30.1);x.save();x.globalAlpha=k;redSheet(1,150,1640,760);x.restore();type('ایده عجیب',540,1635,76,k);
+ const q=opticalEase(t,20.1,22.35),z=Math.exp(Math.log(6.1)*q),g=garageGeometry(t),ap=g.ap;
+ interiorCtx.clearRect(0,0,W,H);const lt=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lt,1,interiorCtx);
+ x.save();x.translate(lerp(ap.cx,540,q),lerp(ap.cy,960,q));x.scale(z,z);x.translate(-ap.cx,-ap.cy);
+ x.save();x.beginPath();x.rect(-2000,-2000,5000,5000);x.rect(ap.x,ap.y,ap.w,ap.h);x.clip('evenodd');redSheet(1,490,1040,1080);x.restore();
+ x.save();x.beginPath();x.rect(ap.x,ap.y,ap.w,ap.h);x.clip();x.drawImage(interiorPass,ap.cx-W/12.2,ap.cy-H/12.2,W/6.1,H/6.1);x.restore();
+ x.save();x.beginPath();x.rect(g.left,g.top,g.w,g.hh);x.rect(ap.x,ap.y,ap.w,ap.h);x.clip('evenodd');x.drawImage(portal,g.left,g.top,g.w,g.hh);x.restore();
+ garageSign(t);x.restore();
+}
+function drawHighlight(t){
+ const h=activeHighlight(t);if(!h)return;if(h.kind==='garage'){if(t<18.55)garageSign(t);return}
+ const a=highlightAlpha(t,h),rise=12*(1-a);
+ if(h.kind==='pair'){headline(h.texts[0],750,420+rise,68,a,340);headline(h.texts[1],320,420+rise,68,a,340);return}
+ if(h.kind==='final'){x.save();x.globalAlpha=a;redSheet(1,150,1640,760);x.restore();headline(h.texts[0],540,1635+rise,76,a,690);return}
+ headline(h.texts[0],540,h.y+rise,h.size,a,h.maxWidth||880);
+}
+function continuation(t){
+ if(t<18.55){through20(t);applyCamera(t)}
+ else if(t<22.35){garageEntry(t)}
+ else{
+  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
+  if(t<25.4){const on=e(t,23.95,24.1);x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();const lt=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lt)}
+  else if(t<26.85){cinematicHandoff(t)}else{house(t)}
+  applyCamera(t);
  }
+ drawHighlight(t);
 }
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;
-window.render=t=>continuation(t+offset);window.fontMetrics=()=>Object.fromEntries(typeMetrics);window.render(0);window.READY=true;
+window.render=t=>{actualText=[];continuation(t+offset);const n=actualText.reduce((n,s)=>n+s.trim().split(/\s+/u).length,0);if(n>2)throw new Error('Keyword limit exceeded: '+actualText.join(' | '));window.lastTextLog=actualText.slice()};window.activeHighlight=activeHighlight;window.cameraState=cameraState;window.fontMetrics=()=>Object.fromEntries(typeMetrics);window.render(0);window.READY=true;
 </script></html>

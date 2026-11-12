@@ -1,6 +1,6 @@
 {
-  "version": "v009-through33",
-  "sha256": "d10f96255034e8beb055ef0bd8990a08a9acfd89dfb8f488433b119de6c66b35",
+  "version": "v010-through33",
+  "sha256": "fb94fe3a6cbe4d2b23081dc24e9b7901bf87cf3dcc10465cfe5258e1ad98bc83",
   "streams": [
     {
       "codec_name": "h264",
@@ -9,10 +9,7 @@
       "r_frame_rate": "30/1",
       "start_time": "0.000000",
       "duration": "33.000000",
-      "nb_frames": "990",
-      "side_data_list": [
-        {}
-      ]
+      "nb_frames": "990"
     },
     {
       "codec_name": "aac",
@@ -25,77 +22,35 @@
   ],
   "checks": {
     "full_decode": {
-      "status": "passed"
+      "status": "passed",
+      "evidence": "ffmpeg complete final MP4 decode, no errors"
     },
-    "font_integrity": {
+    "render": {
+      "status": "passed",
+      "evidence": "Full0–33 rerender,990frames, native1080x1920/30fps, CRF14/JPEG95, one worker,587s"
+    },
+    "keywords": {
       "status": "passed",
       "evidence": {
-        "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
-        "unchanged_official_font": true,
-        "all_required_glyphs_present": true,
-        "license_included": true
+        "groups": 12,
+        "schedule_frames_audited": 990,
+        "max_simultaneous_words": 2,
+        "actual_draw_guard": "Passed every render call across990frames",
+        "font_glyphs_supported": true,
+        "detail": "highlight-audit-v010.json; sparse editorial anchors, not verified subtitles"
       }
     },
-    "headline_size": {
+    "visual_review": {
       "status": "passed",
-      "evidence": {
-        "target_visible_height_ratio": 1.3,
-        "actual_metrics": {
-          "بزنیم گاراژ|62": {
-            "px": 103.21686005209567,
-            "oldHeight": 80,
-            "newHeight": 104,
-            "width": 351.0964050292969,
-            "ratio": 1.3
-          },
-          "واقعی؟|184": {
-            "px": 276.86033051402995,
-            "oldHeight": 193,
-            "newHeight": 250.9043731689453,
-            "width": 656.987548828125,
-            "ratio": 1.3000226589064523
-          },
-          "هیچ|76": {
-            "px": 119.82140964179908,
-            "oldHeight": 73,
-            "newHeight": 96,
-            "width": 186.42822265625,
-            "ratio": 1.3150684931506849
-          },
-          "خیال؟|68": {
-            "px": 95.70132,
-            "oldHeight": 66,
-            "newHeight": 86,
-            "width": 201.1348876953125,
-            "ratio": 1.303030303030303
-          },
-          "سؤال؟|68": {
-            "px": 103.13333333333334,
-            "oldHeight": 70,
-            "newHeight": 91,
-            "width": 244.6127471923828,
-            "ratio": 1.3
-          },
-          "ایده عجیب|76": {
-            "px": 121.77149898989897,
-            "oldHeight": 76,
-            "newHeight": 99,
-            "width": 461.3699035644531,
-            "ratio": 1.3026315789473684
-          }
-        }
-      }
+      "evidence": "Actual preproduction style frames, encoded16-frame mobile-scale whole-film contact sheet,4fps entrance strip18.5–23.5 and house construction/hold strip26.5–32.5 inspected. Large text fits safe width; paired questions leave before final title; no additional footer invitation."
     },
-    "text_free_imagery": {
+    "garage_entry": {
       "status": "passed",
-      "evidence": {
-        "source_frames": {
-          "0": true,
-          "10": true,
-          "25": true
-        },
-        "note": "Identical cached source screenshots at matchingJPEG92. First20picture intentionally rerendered for Lalezar, not bit-identical old video."
-      }
+      "evidence": "20.1–22.35 quintic exponential frontal push1→6.1 through source-matched aperture; sign rises behind lintel; door frame leaves viewport; interior reaches exact screen scale and lamp continues without scene-size reset. Encoded entrance strip inspected."
+    },
+    "camera": {
+      "status": "passed",
+      "evidence": "Restrained4.5% study push/12px upward drift, complementary pullback, existing opening pullback,2.5% house push/pull. Sharp independent HUD; no shake/orbit/continuous oscillation."
     },
     "house_assembly": {
       "status": "passed",
@@ -119,54 +74,52 @@
         "construction_extra_seconds": 2,
         "finished_hold_extra_seconds": 1,
         "motion": "monotonic quintic, no overshoot; same-source material masks, full original house once assembled",
-        "review": "4fps26–33 assembly strip and final composition inspected"
+        "review": "V0094fps assembly strip and V010 encoded26.5–32.5 strip inspected; same component timing, new restrained camera settle"
       }
     },
-    "visual_review": {
-      "status": "passed",
-      "evidence": "Six preproduction frames and encoded whole-film contact sheet; larger Persian titles fit, questions do not collide with descending roof"
-    },
-    "music_and_narration": {
+    "font_integrity": {
       "status": "passed",
       "evidence": {
-        "voice_gain": 1.4428478579032873,
-        "music_gain": 1.8274559638724237,
-        "music_rms_per_second_20_33": [
-          0.038517890518066276,
-          0.04370555116717203,
-          0.027819270207394924,
-          0.02768668732095633,
-          0.038322973913310174,
-          0.022746901213696387,
-          0.03592023055369654,
-          0.03436792608922458,
-          0.041356476202700276,
-          0.04738734567852838,
-          0.0260030230110433,
-          0.031210092528553772,
-          0.036779980309687474
-        ],
-        "peak": 0.8561370372772217,
-        "source_map": "continuous source samples 0–1583999; no time edits"
+        "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
+        "unchanged_official_font": true,
+        "all_required_glyphs_present": true,
+        "license_included": true
       }
     },
     "encoded_audio": {
       "status": "passed",
       "evidence": {
-        "integrated_lufs": "-15.56",
-        "true_peak_dbtp": "-1.37",
-        "sample_rate": 48000
+        "aac_packets": 1548,
+        "packets_and_timestamps_equal": true,
+        "decoded_pcm_equal": true,
+        "pcm_hash": "SHA256=351040975e9b131929bd31e166283cdb98178edd23bd9c9c374f1f5eaacce317",
+        "inherited_integrated_lufs": -15.56,
+        "inherited_true_peak_dbtp": -1.37,
+        "loudness_basis": "DecodedPCM equals verifiedV009, not a new loudness analysis"
       }
     },
-    "render": {
+    "music_and_narration": {
       "status": "passed",
-      "evidence": "Full0–33 rerender,990frames, native1080x1920/30fps, CRF14/JPEG95, one worker,505s"
+      "evidence": "Exact completeV009 audio copied, continuous original source samples0–1583999; narration, score, harmonica and contacts unchanged in timing."
+    },
+    "subtraction_pass": {
+      "status": "passed",
+      "evidence": "No extra whooshes or decorative camera motion; GARAGE/invitation sequential; questions/title sequential; entry carries narrative handoff."
+    },
+    "full_speed_visual_playback": {
+      "status": "not performed",
+      "evidence": "Ordered encoded contact sheets/action strips inspected; not a full-speed playback review"
     },
     "full_speed_listening": {
       "status": "not performed"
     },
     "word_alignment": {
-      "status": "not performed"
+      "status": "not performed",
+      "evidence": "Editorial highlights from supplied script; no word-level ASR/timing claim"
+    },
+    "black_intervals": {
+      "status": "passed",
+      "evidence": "No blackdetect interval>=0.1s at pix_th0.07/pic_th0.995 over full33s"
     }
   },
   "limitations": [

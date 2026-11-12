@@ -27,3 +27,6 @@ V00825.4–26.85 supersedes V007 white-bar transition only. Transparent photogra
 
 
 V009 expands cumulative30→33. Approved lamp timing/long hold and cinematic25.4–26.85 transition remain. Stone base26.05–27.0, brick/window body26.8–28.65, slate roof28.25–30.2; quintic easing and exact shared source masks make joints align, no overshoot. Full original house30.2–33, a2.8s hold. خیال؟/سؤال؟ use Lalezar at y420, held until33. ایده عجیب enters29.8–30.1 and stays to33, optically+30% height. Entire0–33 rerender required to apply Lalezar to opening/doorway text too.
+
+
+V010 supersedes prior typography throughout0–33 and garage handoff18.55–22.35. Complete timed highlights and camera tracks: timeline.json, TREATMENT-v010.md. GARAGE17.05–18.95 then بزنیم گاراژ19.1–21.25, sign lifts20.5–21.4, camera pushes20.1–22.35 through masked opening to lamp at exact screen scale. Lamp assembly retains original global timeline; floor/base visible first, arm unfolds during entry. No extra transition wipe. خیال؟/سؤال؟26.55–29.5, then final ایده عجیب29.8–33; never simultaneous. House component/hold timings unchangedV009.

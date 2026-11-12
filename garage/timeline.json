@@ -331,28 +331,85 @@
     29.8,
     30.2
   ],
-  "notes": "V009 full picture rerender0–33 for Lalezar and optical+30% Persian headlines. House construction extended2s, final hold extended1s. Original global narration/music clock unchanged, no source-time edits.",
+  "notes": "V01033s revision: one/two-word editorial groups, physically mounted garage sign, slow masked aperture push into lamp. Restrained study/house framing only; voice/music and construction timing preserved. No ASR timing claim.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer",
   "editorial_texts": [
     {
+      "text": "واقعی؟",
+      "start_seconds": 0.85,
+      "end_seconds": 3.3,
+      "y": 960
+    },
+    {
+      "text": "از هیچ",
+      "start_seconds": 3.8,
+      "end_seconds": 6.3,
+      "y": 350
+    },
+    {
+      "text": "ساخت",
+      "start_seconds": 6.55,
+      "end_seconds": 8.35,
+      "y": 350
+    },
+    {
+      "text": "باور",
+      "start_seconds": 8.55,
+      "end_seconds": 11.15,
+      "y": 350
+    },
+    {
+      "text": "خردش کنی",
+      "start_seconds": 11.4,
+      "end_seconds": 14.15,
+      "y": 1570
+    },
+    {
+      "text": "فرمول‌های تکراری",
+      "start_seconds": 14.4,
+      "end_seconds": 16.95,
+      "y": 1570
+    },
+    {
+      "text": "GARAGE",
+      "start_seconds": 17.05,
+      "end_seconds": 18.95,
+      "y": 1110
+    },
+    {
+      "text": "بزنیم گاراژ",
+      "start_seconds": 19.1,
+      "end_seconds": 21.25,
+      "y": 1110
+    },
+    {
+      "text": "دقیق‌تر",
+      "start_seconds": 22.35,
+      "end_seconds": 24.25,
+      "y": 350
+    },
+    {
+      "text": "نگاه کنی",
+      "start_seconds": 24.45,
+      "end_seconds": 26.3,
+      "y": 350
+    },
+    {
       "text": "خیال؟",
-      "start_seconds": 26.25,
-      "end_seconds": 33,
-      "x": 750,
+      "start_seconds": 26.55,
+      "end_seconds": 29.5,
       "y": 420
     },
     {
       "text": "سؤال؟",
-      "start_seconds": 26.45,
-      "end_seconds": 33,
-      "x": 320,
+      "start_seconds": 26.55,
+      "end_seconds": 29.5,
       "y": 420
     },
     {
       "text": "ایده عجیب",
       "start_seconds": 29.8,
       "end_seconds": 33,
-      "x": 540,
       "y": 1635
     }
   ],
@@ -372,6 +429,13 @@
   },
   "transitions": [
     {
+      "id": "garage-to-lamp-entry",
+      "start_seconds": 20.1,
+      "end_seconds": 22.35,
+      "type": "quintic exponential frontal camera push through masked physical doorway, exact-scale interior continuation",
+      "audio": "Exact V009 AAC; global source timing unchanged"
+    },
+    {
       "id": "lamp-light-to-house",
       "start_seconds": 25.4,
       "end_seconds": 26.85,
@@ -384,5 +448,227 @@
     "visible_glyph_height_scale": 1.3,
     "measurement_reference": "previous NotoSansArabic headline at same original role size",
     "english_brand_unchanged": true
-  }
+  },
+  "highlights": [
+    {
+      "id": "reality",
+      "start": 0.85,
+      "end": 3.3,
+      "texts": [
+        "واقعی؟"
+      ],
+      "kind": "hud",
+      "y": 960,
+      "size": 184,
+      "start_frame": 26,
+      "end_frame": 99
+    },
+    {
+      "id": "nothing",
+      "start": 3.8,
+      "end": 6.3,
+      "texts": [
+        "از هیچ"
+      ],
+      "kind": "hud",
+      "y": 350,
+      "size": 100,
+      "start_frame": 114,
+      "end_frame": 189
+    },
+    {
+      "id": "made",
+      "start": 6.55,
+      "end": 8.35,
+      "texts": [
+        "ساخت"
+      ],
+      "kind": "hud",
+      "y": 350,
+      "size": 108,
+      "start_frame": 197,
+      "end_frame": 251
+    },
+    {
+      "id": "belief",
+      "start": 8.55,
+      "end": 11.15,
+      "texts": [
+        "باور"
+      ],
+      "kind": "hud",
+      "y": 350,
+      "size": 108,
+      "start_frame": 257,
+      "end_frame": 335
+    },
+    {
+      "id": "break",
+      "start": 11.4,
+      "end": 14.15,
+      "texts": [
+        "خردش کنی"
+      ],
+      "kind": "hud",
+      "y": 1570,
+      "size": 92,
+      "start_frame": 342,
+      "end_frame": 425
+    },
+    {
+      "id": "formulas",
+      "start": 14.4,
+      "end": 16.95,
+      "texts": [
+        "فرمول‌های تکراری"
+      ],
+      "kind": "hud",
+      "y": 1570,
+      "size": 76,
+      "start_frame": 432,
+      "end_frame": 509
+    },
+    {
+      "id": "brand",
+      "start": 17.05,
+      "end": 18.95,
+      "texts": [
+        "GARAGE"
+      ],
+      "kind": "garage",
+      "y": 1110,
+      "size": 180,
+      "start_frame": 512,
+      "end_frame": 569
+    },
+    {
+      "id": "invite",
+      "start": 19.1,
+      "end": 21.25,
+      "texts": [
+        "بزنیم گاراژ"
+      ],
+      "kind": "garage",
+      "y": 1110,
+      "size": 76,
+      "start_frame": 573,
+      "end_frame": 638
+    },
+    {
+      "id": "closer",
+      "start": 22.35,
+      "end": 24.25,
+      "texts": [
+        "دقیق‌تر"
+      ],
+      "kind": "hud",
+      "y": 350,
+      "size": 108,
+      "start_frame": 671,
+      "end_frame": 728
+    },
+    {
+      "id": "look",
+      "start": 24.45,
+      "end": 26.3,
+      "texts": [
+        "نگاه کنی"
+      ],
+      "kind": "hud",
+      "y": 350,
+      "size": 100,
+      "start_frame": 734,
+      "end_frame": 789
+    },
+    {
+      "id": "questions",
+      "start": 26.55,
+      "end": 29.5,
+      "texts": [
+        "خیال؟",
+        "سؤال؟"
+      ],
+      "kind": "pair",
+      "y": 420,
+      "size": 68,
+      "start_frame": 797,
+      "end_frame": 885
+    },
+    {
+      "id": "idea",
+      "start": 29.8,
+      "end": 33,
+      "texts": [
+        "ایده عجیب"
+      ],
+      "kind": "final",
+      "y": 1635,
+      "size": 76,
+      "start_frame": 894,
+      "end_frame": 990
+    }
+  ],
+  "camera_tracks": [
+    {
+      "id": "study-push",
+      "start": 4.1,
+      "end": 6.55,
+      "zoom": [
+        1,
+        1.045
+      ],
+      "y": [
+        0,
+        -12
+      ]
+    },
+    {
+      "id": "assembly-pullback",
+      "start": 6.55,
+      "end": 9.8,
+      "zoom": [
+        1.045,
+        1
+      ],
+      "y": [
+        -12,
+        0
+      ]
+    },
+    {
+      "id": "garage-entry",
+      "start": 20.1,
+      "end": 22.35,
+      "zoom": [
+        1,
+        6.1
+      ],
+      "target": [
+        540,
+        1117
+      ],
+      "final_screen_center": [
+        540,
+        960
+      ]
+    },
+    {
+      "id": "roof-push",
+      "start": 28.25,
+      "end": 30.2,
+      "zoom": [
+        1,
+        1.025
+      ]
+    },
+    {
+      "id": "finished-pullback",
+      "start": 30.2,
+      "end": 33,
+      "zoom": [
+        1.025,
+        1
+      ]
+    }
+  ]
 }

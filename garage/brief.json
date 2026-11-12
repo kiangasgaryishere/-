@@ -11,17 +11,23 @@
     25,
     15
   ],
-  "review": "User approved style/story direction; now explicitly requested first 10 seconds",
+  "review": "User-approved art direction; independently execute requested cumulative revisions",
   "mode": "ten-second",
   "narration": "safari.mp3, unchanged wording and speed",
-  "caption_policy": "sparse editorial words only; no word captions",
+  "caption_policy": "Large sparse editorial highlights, maximum two words simultaneously; not verbatim subtitles",
   "audio": "Continuous 94BPM seeded jazz bass/brush/kick, muted guitar, VCSL harmonica in measured source pauses, sparse contact Foley, unchanged narrator",
-  "visual_revision": "V009 Lalezar with optical+30% Persian headlines, slower precisely fitted house,33s cumulative preview",
-  "latest_export": "video/garage-through-033s-v009.mp4",
+  "visual_revision": "V010 more large one/two-word highlights, physical garage entry, restrained camera variety",
+  "latest_export": "video/garage-through-033s-v010.mp4",
   "completed_master_interval": [
     0,
     33
   ],
   "next_start_seconds": 33,
-  "audience": "Industrial/product/graphic/architecture designers; broadly accessible narrative introduction to GARAGE cast"
+  "audience": "Industrial/product/graphic/architecture designers; broadly accessible narrative introduction to GARAGE cast",
+  "delivery": {
+    "repository": "kiangasgaryishere/-",
+    "branch": "work",
+    "visibility": "public",
+    "policy": "Automatic versioned commit/push and verified commit-pinned cumulative MP4 download; source narration remains local"
+  }
 }

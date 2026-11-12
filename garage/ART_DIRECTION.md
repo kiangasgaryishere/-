@@ -16,3 +16,6 @@ V008 visual-only transition refinement25.4–26.85: replace white strips/hard wi
 
 
 V009: all Persian editorial type is genuine Lalezar Regular400, optically calibrated to approximately130% of prior Noto glyph height for each original role; no fake bold or width stretch. English GARAGE unchanged. Questions moved30px upward to y420 to give larger letters and the descending roof safe separation. House material/asset unchanged. Monotonic component movement: body from(-70,-100), roof from(0,-90); no bounce or interpenetration. Final composition and paper grain remain.
+
+
+V010: large sparse editorial highlights throughout, one active group/max2words. White Lalezar against dark negative space; no extra red cards. GARAGE and بزنیم گاراژ appear sequentially on the same physical sign. Questions disappear before final title. Exact-mask doorway camera push replaces cover transition. Restrained study4.5% push/12px upward drift and final house2.5% push/pull; HUD remains crisp. No extra shake, orbit, whoosh or decorative motion.
