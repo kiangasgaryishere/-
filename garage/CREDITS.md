@@ -19,3 +19,5 @@ V006: lamp-parts-v006.png and pavilion-parts-v006.png generated specifically wit
 
 
 V007 house-v007.png: new photorealistic generated architectural cutout,1024x1536, real-material brick/slate/glass/stone appearance; not a documentary photograph of a real address. Original generated image retained untouched; Canvas mask layers animate its own foundation/walls/roof. No new third-party media or fonts.
+
+V009 Persian typography: Lalezar Regular by Borna Izadpanah, official Google Fonts distribution (https://github.com/google/fonts/tree/main/ofl/lalezar), source project https://github.com/BornaIz/Lalezar. Unmodified TTF included with SIL OFL1.1 in fonts/LICENSE-Lalezar.txt. No synthetic bold or horizontal distortion. Previous Noto Sans Arabic retained as a nonvisible metric reference; English GARAGE face unchanged. No new visual assets.

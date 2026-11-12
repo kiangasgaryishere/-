@@ -1,6 +1,6 @@
 {
-  "version": "v008-through30",
-  "sha256": "3385695ca0215867188c0a11ae313e0c0119395d65f281d2f6e6c37f78b250ef",
+  "version": "v009-through33",
+  "sha256": "d10f96255034e8beb055ef0bd8990a08a9acfd89dfb8f488433b119de6c66b35",
   "streams": [
     {
       "codec_name": "h264",
@@ -8,8 +8,8 @@
       "height": 1920,
       "r_frame_rate": "30/1",
       "start_time": "0.000000",
-      "duration": "30.000000",
-      "nb_frames": "900",
+      "duration": "33.000000",
+      "nb_frames": "990",
       "side_data_list": [
         {}
       ]
@@ -19,58 +19,148 @@
       "sample_rate": "48000",
       "r_frame_rate": "0/0",
       "start_time": "0.000000",
-      "duration": "30.000000",
-      "nb_frames": "1408"
+      "duration": "33.000000",
+      "nb_frames": "1548"
     }
   ],
   "checks": {
     "full_decode": {
       "status": "passed"
     },
-    "first20_picture": {
-      "status": "passed",
-      "evidence": "All600 decoded picture hashes equal approvedV003"
-    },
-    "unaffected_source_frames": {
+    "font_integrity": {
       "status": "passed",
       "evidence": {
-        "25.0": true,
-        "27.2": true,
-        "29.2": true
+        "sha256": "7b80807bc831f141de0f7dcf6816412bf0c548968d548c5156ca388733390ea9",
+        "unchanged_official_font": true,
+        "all_required_glyphs_present": true,
+        "license_included": true
       }
     },
-    "transition": {
-      "status": "passed",
-      "evidence": "Reviewed three preproduction frames and final4fps25–27.5 action strip; white-bar wipe absent, continuous optical overlap/light contraction, no empty black frame, focus restored by26.85"
-    },
-    "timing_and_text": {
-      "status": "passed",
-      "evidence": "V007lamp extension, house assembly times, all three Persian labels and30s total preserved"
-    },
-    "audio_equivalence": {
+    "headline_size": {
       "status": "passed",
       "evidence": {
-        "aac_packets_equal": true,
-        "aac_packet_count": 1408,
-        "decoded_pcm_equal": true
+        "target_visible_height_ratio": 1.3,
+        "actual_metrics": {
+          "بزنیم گاراژ|62": {
+            "px": 103.21686005209567,
+            "oldHeight": 80,
+            "newHeight": 104,
+            "width": 351.0964050292969,
+            "ratio": 1.3
+          },
+          "واقعی؟|184": {
+            "px": 276.86033051402995,
+            "oldHeight": 193,
+            "newHeight": 250.9043731689453,
+            "width": 656.987548828125,
+            "ratio": 1.3000226589064523
+          },
+          "هیچ|76": {
+            "px": 119.82140964179908,
+            "oldHeight": 73,
+            "newHeight": 96,
+            "width": 186.42822265625,
+            "ratio": 1.3150684931506849
+          },
+          "خیال؟|68": {
+            "px": 95.70132,
+            "oldHeight": 66,
+            "newHeight": 86,
+            "width": 201.1348876953125,
+            "ratio": 1.303030303030303
+          },
+          "سؤال؟|68": {
+            "px": 103.13333333333334,
+            "oldHeight": 70,
+            "newHeight": 91,
+            "width": 244.6127471923828,
+            "ratio": 1.3
+          },
+          "ایده عجیب|76": {
+            "px": 121.77149898989897,
+            "oldHeight": 76,
+            "newHeight": 99,
+            "width": 461.3699035644531,
+            "ratio": 1.3026315789473684
+          }
+        }
+      }
+    },
+    "text_free_imagery": {
+      "status": "passed",
+      "evidence": {
+        "source_frames": {
+          "0": true,
+          "10": true,
+          "25": true
+        },
+        "note": "Identical cached source screenshots at matchingJPEG92. First20picture intentionally rerendered for Lalezar, not bit-identical old video."
+      }
+    },
+    "house_assembly": {
+      "status": "passed",
+      "evidence": {
+        "foundation": [
+          26.05,
+          27.0
+        ],
+        "body": [
+          26.8,
+          28.65
+        ],
+        "roof": [
+          28.25,
+          30.2
+        ],
+        "finished_hold": [
+          30.2,
+          33
+        ],
+        "construction_extra_seconds": 2,
+        "finished_hold_extra_seconds": 1,
+        "motion": "monotonic quintic, no overshoot; same-source material masks, full original house once assembled",
+        "review": "4fps26–33 assembly strip and final composition inspected"
+      }
+    },
+    "visual_review": {
+      "status": "passed",
+      "evidence": "Six preproduction frames and encoded whole-film contact sheet; larger Persian titles fit, questions do not collide with descending roof"
+    },
+    "music_and_narration": {
+      "status": "passed",
+      "evidence": {
+        "voice_gain": 1.4428478579032873,
+        "music_gain": 1.8274559638724237,
+        "music_rms_per_second_20_33": [
+          0.038517890518066276,
+          0.04370555116717203,
+          0.027819270207394924,
+          0.02768668732095633,
+          0.038322973913310174,
+          0.022746901213696387,
+          0.03592023055369654,
+          0.03436792608922458,
+          0.041356476202700276,
+          0.04738734567852838,
+          0.0260030230110433,
+          0.031210092528553772,
+          0.036779980309687474
+        ],
+        "peak": 0.8561370372772217,
+        "source_map": "continuous source samples 0–1583999; no time edits"
       }
     },
     "encoded_audio": {
       "status": "passed",
       "evidence": {
-        "basis": "AAC payload and decoded PCM exactly equalV007; prior measured levels therefore retained",
-        "prior_measurement": {
-          "status": "passed",
-          "evidence": {
-            "lufs": "-15.83",
-            "true_peak_dbtp": "-1.39"
-          }
-        }
+        "integrated_lufs": "-15.56",
+        "true_peak_dbtp": "-1.37",
+        "sample_rate": 48000
       }
     },
     "render": {
       "status": "passed",
-      "evidence": "300 new frames,1080x1920,30fps,CRF14,JPEG95, one worker. Two-worker attempt timed out on screenshot; single-worker final completed in306s without resolution/quality reduction."
+      "evidence": "Full0–33 rerender,990frames, native1080x1920/30fps, CRF14/JPEG95, one worker,505s"
     },
     "full_speed_listening": {
       "status": "not performed"
@@ -80,8 +170,9 @@
     }
   },
   "limitations": [
-    "Generated photorealistic assets, not documentary photography",
-    "No new listening/ASR verification; audio exactly preserved fromV007",
-    "Cumulative0–30 only"
+    "Photorealistic generated assets, not documentary photography",
+    "Historical mastered soundtrack stems absent; recovered first20PCM and original score reconstruction used",
+    "No new full-speed listening/word-level ASR claim",
+    "Cumulative0–33 preview, not completed58s film"
   ]
 }

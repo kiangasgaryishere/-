@@ -19,3 +19,6 @@ V007 final timing refinement: the+2s lamp scene is split into+1s assembly (20.8�
 
 
 V008 user requested smoother, more cinematic lamp-to-house transition. Scope restricted to25.4–26.85, replacing hard white-bar wipe with motivated optical overlap/light match and focus handoff. No new assets, fast whip, whole-frame flash, fake3D orbit or extra sound sting. Lamp extension, house material/assembly timing, labels خیال؟/سؤال؟/ایده عجیب and30s duration preserved. Exact source images outside transition checked at25/27.2/29.2; match previous renderer output.
+
+
+V009 user chose Lalezar and requested visibly30% larger headlines, plus3s to make house assembly clear; explicitly allowed32/33s duration. Selected33s, +2s construction and+1s finished hold. Source narration/music continue unchanged in timing to33, no narration pause or speed edit. Optical font measurement compensates different typeface proportions; headline ratios recorded in font-metrics-v009.json (main title99px vs76px before). First20 picture is intentionally rerendered for new Persian font, so previous600 encoded-frame preservation check does not apply; imagery/timing retained. Existing independent-production authorization continues.

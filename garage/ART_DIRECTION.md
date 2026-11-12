@@ -13,3 +13,6 @@ V007 replaces open pavilion with a recognisable complete home: pitched slate roo
 
 
 V008 visual-only transition refinement25.4–26.85: replace white strips/hard wipe with quintic-eased optical dissolve, restrained outgoing3.5% push/30px drift and temporary defocus, incoming1.5% settle and focus resolve. Local red pool contracts toward red doorway; no full-frame flash or extra color. All filters/transforms restored by26.85; Persian text remains sharp at original timing. No new assets.
+
+
+V009: all Persian editorial type is genuine Lalezar Regular400, optically calibrated to approximately130% of prior Noto glyph height for each original role; no fake bold or width stretch. English GARAGE unchanged. Questions moved30px upward to y420 to give larger letters and the descending roof safe separation. House material/asset unchanged. Monotonic component movement: body from(-70,-100), roof from(0,-90); no bounce or interpenetration. Final composition and paper grain remain.

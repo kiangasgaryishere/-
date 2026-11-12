@@ -1,9 +1,9 @@
 <!doctype html><html lang="fa"><meta charset="utf-8"><style>
-@font-face{font-family:GarageFa;src:url('fonts/NotoSansArabic-Bold.ttf')}*{margin:0}body{background:#111;overflow:hidden}canvas{display:block;width:100vw;height:100vh}
+@font-face{font-family:GarageFa;src:url('fonts/Lalezar-Regular.ttf');font-weight:400}@font-face{font-family:GarageFaPrevious;src:url('fonts/NotoSansArabic-Bold.ttf');font-weight:700}*{margin:0}body{background:#111;overflow:hidden}canvas{display:block;width:100vw;height:100vh}
 @font-face{font-family:GarageLatin;src:url('fonts/GarageLatin.ttf')}</style><canvas id="film" width="1080" height="1920"></canvas><script type="module">
 import {ss,lerp,mulberry} from '/core/lib.js';
 const c=document.querySelector('canvas'),x=c.getContext('2d');
-const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('bold 70px GarageFa');
+const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('400 100px GarageFa');await document.fonts.load('700 100px GarageFaPrevious');
 const study=new Image();study.src='assets/chair-study.png';await study.decode();
 const parts=new Image();parts.src='assets/chair-parts.png';await parts.decode();const portal=new Image();portal.src='assets/garage-portal.png';await portal.decode();await document.fonts.load('bold 100px GarageLatin');
 const lampParts=new Image();lampParts.src='assets/lamp-parts-v006.png';await lampParts.decode();const houseAsset=new Image();houseAsset.src='assets/house-v007.png';await houseAsset.decode();
@@ -18,7 +18,16 @@ const tear=[];for(let i=-100;i<=1180;i+=12)tear.push([i,1350-i*.25+(rng()-.5)*16
 // Red is one continuous physical under-sheet: a tear exposes it, then it becomes the drawing support.
 function redSheet(reveal=1,height=330,cy=960,width=1080){x.save();x.beginPath();const left=540-width/2,right=540+width/2;for(let i=0;i<=50;i++){const px=left+(right-left)*i/50;const jag=Math.sin(i*7.31)*7+Math.sin(i*2.17)*4;const yy=cy-height/2-(px-540)*.07+jag;i?x.lineTo(px,yy):x.moveTo(px,yy)}for(let i=50;i>=0;i--){const px=left+(right-left)*i/50;x.lineTo(px,cy+height/2-(px-540)*.07+Math.sin(i*8.13)*8)}x.closePath();x.save();x.clip();x.beginPath();x.rect(left,0,width*reveal,H);x.clip();x.fillStyle=RED;x.fillRect(0,0,W,H);x.globalCompositeOperation='multiply';x.globalAlpha=.06;x.drawImage(paper,0,0);x.restore();x.restore()}
 function photo(cx,cy,width,rot=0,opacity=1){x.save();x.globalAlpha=opacity;x.translate(cx,cy);x.rotate(rot);x.shadowColor='rgba(0,0,0,.65)';x.shadowBlur=28;x.shadowOffsetY=18;const h=width*chair.height/chair.width;x.drawImage(chair,-width/2,-h/2,width,h);x.restore()}
-function type(s,cx,cy,size=72,alpha=1){x.save();x.globalAlpha=alpha;x.direction='rtl';x.textAlign='center';x.textBaseline='alphabetic';x.font=`bold ${size}px GarageFa`;x.fillStyle=WHITE;const m=x.measureText(s);x.fillText(s,cx,cy+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);x.restore()}
+// Preserve the requested +30% optical glyph height across a typeface change.
+const typeMetrics=new Map();
+function labelFont(text,size){
+ const key=text+'|'+size;if(typeMetrics.has(key))return typeMetrics.get(key);
+ x.save();x.direction='rtl';x.font=`700 ${size}px GarageFaPrevious`;const old=x.measureText(text),height=old.actualBoundingBoxAscent+old.actualBoundingBoxDescent;
+ let px=size*1.3,metric;
+ for(let i=0;i<3;i++){x.font=`400 ${px}px GarageFa`;metric=x.measureText(text);const h=metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent;if(i<2&&h>0)px*=height*1.3/h}
+ const result={px,oldHeight:height,newHeight:metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent,width:metric.width,ratio:(metric.actualBoundingBoxAscent+metric.actualBoundingBoxDescent)/height};typeMetrics.set(key,result);x.restore();return result;
+}
+function type(s,cx,cy,size=72,alpha=1){x.save();x.globalAlpha=alpha;x.direction='rtl';x.textAlign='center';x.textBaseline='alphabetic';const face=labelFont(s,size);x.font=`400 ${face.px}px GarageFa`;x.fillStyle=WHITE;const m=x.measureText(s);x.fillText(s,cx,cy+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2);x.restore()}
 function path(points,progress,color=WHITE,width=3){let lengths=[],total=0;for(let i=1;i<points.length;i++){const d=Math.hypot(points[i][0]-points[i-1][0],points[i][1]-points[i-1][1]);lengths.push(d);total+=d}let remain=total*cl(progress);x.strokeStyle=color;x.lineWidth=width;x.lineJoin='round';x.lineCap='round';x.beginPath();x.moveTo(...points[0]);for(let i=1;i<points.length;i++){if(remain<=0)break;const z=Math.min(1,remain/lengths[i-1]);x.lineTo(lerp(points[i-1][0],points[i][0],z),lerp(points[i-1][1],points[i][1],z));remain-=lengths[i-1]}x.stroke()}
 const lines=[[[270,690],[310,400],[770,370],[820,640]],[[280,690],[820,640],[760,835],[230,870],[280,690]],[[230,870],[190,1230],[380,1270],[420,1170]],[[760,835],[800,1250],[600,1340],[590,940]],[[270,690],[180,650],[130,720],[125,1050],[210,1120]],[[820,640],[890,620],[930,700],[930,1150],[800,1250]],[[310,400],[345,430],[780,405]],[[330,480],[320,630],[770,600],[780,445]],[[280,740],[760,690],[725,800],[250,830]]];
 function sketch(t){x.save();const q=e(t,4.05,5.9);x.beginPath();x.rect(70,1550-1300*q,940,1300*q);x.clip();x.globalCompositeOperation='screen';x.globalAlpha=.82;const w=875,h=w*study.height/study.width;x.drawImage(study,540-w/2,1035-h/2,w,h);x.restore();x.save();x.setLineDash([9,14]);x.globalAlpha=.26;path([[150,1490],[930,1490]],e(t,5,5.6),WHITE,1.2);path([[980,550],[980,1430]],e(t,5.2,5.8),WHITE,1.2);x.setLineDash([]);x.restore()}
@@ -108,9 +117,9 @@ function housePiece(kind,dx,dy,alpha,ctx=x){
  ctx.drawImage(houseAsset,0,0);ctx.restore();
 }
 function house(t,ctx=x){
- if(t>=28.2){ctx.save();ctx.translate(540,1080);ctx.scale(.84,.84);ctx.translate(-512,-800);ctx.drawImage(houseAsset,0,0);ctx.restore();return}
- const f=settle(t,26.05,26.6),w=settle(t,26.4,27.25),r=settle(t,27.1,28.2);
- housePiece('base',0,(1-f)*220,e(t,26.05,26.25),ctx);housePiece('body',-(1-w)*200,-(1-w)*160,e(t,26.4,26.65),ctx);housePiece('roof',0,-(1-r)*320,e(t,27.1,27.35),ctx);
+ if(t>=30.2){ctx.save();ctx.translate(540,1080);ctx.scale(.84,.84);ctx.translate(-512,-800);ctx.drawImage(houseAsset,0,0);ctx.restore();return}
+ const f=opticalEase(t,26.05,27.0),w=opticalEase(t,26.8,28.65),r=opticalEase(t,28.25,30.2);
+ housePiece('base',0,(1-f)*140,e(t,26.05,26.3),ctx);housePiece('body',-(1-w)*70,-(1-w)*100,e(t,26.8,27.2),ctx);housePiece('roof',0,-(1-r)*90,e(t,28.25,28.65),ctx);
 }
 // V008: two transparent photographic passes share a soft optical handoff.
 const lampPass=document.createElement('canvas'),housePass=document.createElement('canvas');
@@ -136,10 +145,10 @@ function continuation(t){
   const lampTime=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lampTime);
  }else if(t<26.85){cinematicHandoff(t)}else{house(t)}
  if(t>=26.05){
-  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);type('خیال؟',750,450+18*(1-a),68,a);type('سؤال؟',320,450+18*(1-b),68,b);
-  const k=e(t,27.6,27.85);x.save();x.globalAlpha=k;redSheet(1,150,1640,760);x.restore();type('ایده عجیب',540,1635,76,k);
+  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);type('خیال؟',750,420+18*(1-a),68,a);type('سؤال؟',320,420+18*(1-b),68,b);
+  const k=e(t,29.8,30.1);x.save();x.globalAlpha=k;redSheet(1,150,1640,760);x.restore();type('ایده عجیب',540,1635,76,k);
  }
 }
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;
-window.render=t=>continuation(t+offset);window.render(0);window.READY=true;
+window.render=t=>continuation(t+offset);window.fontMetrics=()=>Object.fromEntries(typeMetrics);window.render(0);window.READY=true;
 </script></html>

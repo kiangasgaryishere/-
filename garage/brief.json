@@ -16,12 +16,12 @@
   "narration": "safari.mp3, unchanged wording and speed",
   "caption_policy": "sparse editorial words only; no word captions",
   "audio": "Continuous 94BPM seeded jazz bass/brush/kick, muted guitar, VCSL harmonica in measured source pauses, sparse contact Foley, unchanged narrator",
-  "visual_revision": "V008 smooth cinematic lamp-to-house optical handoff only",
-  "latest_export": "video/garage-through-030s-v008.mp4",
+  "visual_revision": "V009 Lalezar with optical+30% Persian headlines, slower precisely fitted house,33s cumulative preview",
+  "latest_export": "video/garage-through-033s-v009.mp4",
   "completed_master_interval": [
     0,
-    30
+    33
   ],
-  "next_start_seconds": 30,
+  "next_start_seconds": 33,
   "audience": "Industrial/product/graphic/architecture designers; broadly accessible narrative introduction to GARAGE cast"
 }

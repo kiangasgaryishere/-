@@ -24,3 +24,6 @@ V007 final timing refinement: the+2s lamp scene is split into+1s assembly (20.8�
 
 
 V00825.4–26.85 supersedes V007 white-bar transition only. Transparent photographic lamp/house layers overlap; outgoing lamp gently pushes and defocuses, incoming foundation/body resolve on unchanged26.05/26.4 assembly clocks. Red pool shrinks toward the doorway. Roof timing and all text/holds remainV007. Reference frames25.55/26.15/26.65 reviewed; unaffected source-frame samples25.0/27.2/29.2 matchV007 byte-for-byte in same renderer.
+
+
+V009 expands cumulative30→33. Approved lamp timing/long hold and cinematic25.4–26.85 transition remain. Stone base26.05–27.0, brick/window body26.8–28.65, slate roof28.25–30.2; quintic easing and exact shared source masks make joints align, no overshoot. Full original house30.2–33, a2.8s hold. خیال؟/سؤال؟ use Lalezar at y420, held until33. ایده عجیب enters29.8–30.1 and stays to33, optically+30% height. Entire0–33 rerender required to apply Lalezar to opening/doorway text too.

@@ -17,3 +17,6 @@ V007 final timing refinement: the+2s lamp scene is split into+1s assembly (20.8�
 
 
 V008 is visual only: exact complete V007AAC stream copied into new export; no audio decode/re-encode, effects changes, narration edits or music retiming. Existing soft paper cue at26 remains. Audio payload hashes must match prior version.
+
+
+V009 extends original source narration and continuous94BPM score to33seconds, samples0–1583999, with no time edits, speed changes, repeated words or music reset. Keep first20 recovered approved PCM; all33 seconds encoded to AAC once. Existing quiet harmonica20.85/29.3 retained. House contact cues retimed to base27.0, body28.65, roof30.2; title paper29.8. Score RMS checked nonzero every second20–33. This is a longer cumulative preview, not a finished58s film.

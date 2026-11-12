@@ -2,16 +2,16 @@
   "schema_version": 1,
   "fps": 30,
   "sample_rate": 48000,
-  "preview_frames": 900,
-  "duration_frames": 900,
+  "preview_frames": 990,
+  "duration_frames": 990,
   "narration_sha256": "1055040cb2842c4b124f49c826e5e1cbced3e2524b00a070e7218f1582b3ac20",
   "source_map": [
     {
       "kind": "source",
       "output_start_sample": 0,
-      "output_end_sample": 1440000,
+      "output_end_sample": 1584000,
       "source_start_sample": 0,
-      "source_end_sample": 1440000
+      "source_end_sample": 1584000
     }
   ],
   "shots": [
@@ -68,12 +68,12 @@
     {
       "id": "real-material-house-assembly",
       "start_seconds": 26.05,
-      "end_seconds": 28.2
+      "end_seconds": 30.2
     },
     {
       "id": "strange-idea-house-hold",
-      "start_seconds": 28.2,
-      "end_seconds": 30
+      "start_seconds": 30.2,
+      "end_seconds": 33
     }
   ],
   "sound_events": [
@@ -251,8 +251,8 @@
     },
     {
       "id": "impact-light-soft",
-      "moment": 26.181,
-      "start": 26.169,
+      "moment": 27.0,
+      "start": 26.988,
       "sync": 0.012,
       "gain": 0.03,
       "asset": "sounds/impacts/impact-light-soft.wav",
@@ -260,8 +260,8 @@
     },
     {
       "id": "foley-paper-touch",
-      "moment": 26.602,
-      "start": 26.58,
+      "moment": 28.65,
+      "start": 28.628,
       "sync": 0.022,
       "gain": 0.03,
       "asset": "sounds/foley/foley-paper-touch.wav",
@@ -269,8 +269,8 @@
     },
     {
       "id": "impact-light-soft",
-      "moment": 27.362,
-      "start": 27.35,
+      "moment": 30.2,
+      "start": 30.188,
       "sync": 0.012,
       "gain": 0.03,
       "asset": "sounds/impacts/impact-light-soft.wav",
@@ -278,8 +278,8 @@
     },
     {
       "id": "foley-paper-slide",
-      "moment": 27.6,
-      "start": 27.594,
+      "moment": 29.8,
+      "start": 29.794,
       "sync": 0.006,
       "gain": 0.025,
       "asset": "sounds/foley/foley-paper-slide.wav",
@@ -324,32 +324,34 @@
     22.95,
     25.7,
     26.05,
-    26.4,
-    27.1,
-    28.2,
-    27.6
+    26.8,
+    27.0,
+    28.25,
+    28.65,
+    29.8,
+    30.2
   ],
-  "notes": "V008 transition-only revision25.4–26.85. Exact V007 source image behavior outside window, all shot/text/narration timings retained. Lamp long-hold extension remains. Optical group layers replace white-bar wipe.",
+  "notes": "V009 full picture rerender0–33 for Lalezar and optical+30% Persian headlines. House construction extended2s, final hold extended1s. Original global narration/music clock unchanged, no source-time edits.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer",
   "editorial_texts": [
     {
       "text": "خیال؟",
       "start_seconds": 26.25,
-      "end_seconds": 30,
+      "end_seconds": 33,
       "x": 750,
-      "y": 450
+      "y": 420
     },
     {
       "text": "سؤال؟",
       "start_seconds": 26.45,
-      "end_seconds": 30,
+      "end_seconds": 33,
       "x": 320,
-      "y": 450
+      "y": 420
     },
     {
       "text": "ایده عجیب",
-      "start_seconds": 27.6,
-      "end_seconds": 30,
+      "start_seconds": 29.8,
+      "end_seconds": 33,
       "x": 540,
       "y": 1635
     }
@@ -362,7 +364,11 @@
     "assembly_duration_after": 3.15,
     "additional_settled_hold_seconds": 1,
     "audio_retimed": false,
-    "total_seconds": 30
+    "total_seconds": 33,
+    "house_assembly_end_before": 28.2,
+    "house_assembly_end_after": 30.2,
+    "finished_house_hold_before": 1.8,
+    "finished_house_hold_after": 2.8
   },
   "transitions": [
     {
@@ -370,7 +376,13 @@
       "start_seconds": 25.4,
       "end_seconds": 26.85,
       "type": "quintic eased optical dissolve, outgoing defocus and restrained push, incoming focus resolve, localized red light/door match",
-      "audio": "V007 AAC stream copied unchanged"
+      "audio": "Continuous original source narration and reconstructed score through33s, house contacts retimed"
     }
-  ]
+  ],
+  "typography": {
+    "persian_font": "Lalezar Regular400",
+    "visible_glyph_height_scale": 1.3,
+    "measurement_reference": "previous NotoSansArabic headline at same original role size",
+    "english_brand_unchanged": true
+  }
 }
