@@ -10,3 +10,6 @@ V002 overrides: 0.65–1.25s expose central red sheet; واقعی؟ centered and
 V003 continuation: 10–12s accepted objects multiply, then attention returns to the central chair; 12–15.72s six independently animated photographic components open into an exploded view; 15.72–18.55s parts move aside, a tactile architectural workshop doorway arrives; 18.55–20s red interior becomes the GARAGE invitation. Picture uses master time; first ten seconds reused from approved v002. Timing is based on measured voice pauses, not verified word-level transcription.
 
 V004 20–30s: 20–21.4 enter the same red doorway onto a work surface; 21.4–24.1 one physical black question-card on red paper; 24.1–27.2 card yields to white chair study; 27.2–30 photographic strips assemble a tangible prototype. Source anchors: خیال، سؤال یا یک ایده عجیب / یکی تصورشون کرد، یکی بهشون شکل داد. Sparse question mark only, no invented narration/captions. Source phrases are not claimed to have verified word timestamps.
+
+
+V005 supersedes V004 20–30: 20–21.3 doorway pushes into drawing workbench; 21.3–24.3 medium pencil/drawing composition settles; 24.3–27.35 lateral move discloses grey-card model, dark paper occlusion reveals isolated model; 27.35–30 prototype gains chrome/leather through a left-to-right material wipe. No question-card or added text. Visual/sound plan: TREATMENT-v005.md.

@@ -6,6 +6,7 @@ const c=document.querySelector('canvas'),x=c.getContext('2d');
 const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('bold 70px GarageFa');
 const study=new Image();study.src='assets/chair-study.png';await study.decode();
 const parts=new Image();parts.src='assets/chair-parts.png';await parts.decode();const portal=new Image();portal.src='assets/garage-portal.png';await portal.decode();await document.fonts.load('bold 100px GarageLatin');
+const bench=new Image();bench.src='assets/workbench-v005.png';await bench.decode();const model=new Image();model.src='assets/prototype-v005.png';await model.decode();
 const T=await (await fetch('timeline.json')).json();
 const W=1080,H=1920,BLACK='#111111',RED='#D71920',WHITE='#FFFFFF';
 const cl=v=>Math.max(0,Math.min(1,v)),e=(t,a,b)=>ss(cl((t-a)/(b-a)));
@@ -88,23 +89,25 @@ function prototype(t){
  const a=e(t,27.2,29.4);x.save();x.globalAlpha=1-a;x.globalCompositeOperation='screen';x.drawImage(study,180,460,720,720*study.height/study.width);x.restore();
  for(let i=0;i<6;i++){const q=e(t,27.2+i*.12,28.6+i*.12);if(!q)continue;x.save();const w=720,h=w*chair.height/chair.width,yy=460+i*h/6;x.beginPath();x.rect(0,yy-1,1080,h/6+2);x.clip();photo(540+(i%2?1:-1)*(1-q)*150,460+h/2,w,(1-q)*.04,q);x.restore()}
 }
+function picture(img,cx,cy,w,rot=0,alpha=1){x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.rotate(rot);x.shadowColor='rgba(0,0,0,.6)';x.shadowBlur=24;x.shadowOffsetY=12;x.drawImage(img,-w/2,-w*img.height/img.width/2,w,w*img.height/img.width);x.restore()}
 function continuation(t){
  if(t<20){through20(t);return}
- const enter=e(t,20,21.4);
- if(t<21.4){x.drawImage(paper,0,0);x.save();x.translate(540,1050);x.scale(1+enter*1.5,1+enter*1.5);x.translate(-540,-1050);x.globalAlpha=1-enter;x.drawImage(doorwayFrame,0,0);x.restore()}
- else {x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0)}
- x.save();x.globalAlpha=enter;redSheet(1,1000,1020,950);
- // Same sheet becomes a workshop surface; no unrelated visual inserts.
- x.save();x.globalAlpha=.16;path([[110,1490],[960,1430]],1,WHITE,2);path([[140,500],[940,450]],1,WHITE,1);x.restore();
- if(t<24.1){
-  const q=e(t,21.2,22.1);x.save();x.translate(540,990);x.rotate(-.035);x.fillStyle=BLACK;x.fillRect(-320,-380,640,760);x.globalAlpha=q;type('؟',0,15,290,q);x.restore();
-  // One fine sketch line creeps out of the question, preparing the next image.
-  path([[320,1370],[400,1340],[660,1340],[720,1300]],e(t,22.8,24),WHITE,2);
- }else if(t<27.2){
-  const q=e(t,24.1,24.8);x.save();x.globalAlpha=1-q;x.fillStyle=BLACK;x.fillRect(220,610,640,760);type('؟',540,1005,290,1-q);x.restore();
-  x.save();x.beginPath();x.rect(130,410,820,1160*e(t,24.15,26.5));x.clip();x.globalCompositeOperation='screen';x.globalAlpha=.92;x.drawImage(study,180,460,720,720*study.height/study.width);x.restore();
- }else {prototype(t);}
- x.restore();
+ x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
+ if(t<21.3){
+  const q=e(t,20,21.3);x.save();x.translate(540,1050);x.scale(1+q*1.4,1+q*1.4);x.translate(-540,-1050);x.globalAlpha=1-e(t,20.7,21.3);x.drawImage(doorwayFrame,0,0);x.restore();
+  const a=e(t,20.55,21.3);picture(bench,540,lerp(1950,1000,a),lerp(950,1080,a),lerp(.055,-.012,a),a);
+ }else if(t<24.3){
+  const q=e(t,21.3,24.3);picture(bench,lerp(560,580,q),lerp(1030,1090,q),lerp(1100,1240,q),lerp(-.012,0,q));
+ }else if(t<27.35){
+  const q=e(t,24.3,27.35);picture(bench,lerp(580,440,q),lerp(1090,1150,q),lerp(1240,1360,q),0);
+  // Material occlusion: a strip of the same dark paper exposes the model.
+  const a=e(t,26.35,27.35);x.save();x.globalAlpha=a;x.drawImage(paper,0,0);x.restore();
+  x.save();x.globalAlpha=a;redSheet(1,420,1110,960);x.restore();picture(model,lerp(780,540,a),lerp(1120,1030,a),lerp(630,930,a),lerp(.045,-.018,a),a);
+ }else{
+  const q=e(t,27.35,30);redSheet(1,lerp(420,350,q),1110,960);picture(model,540,lerp(1030,1000,q),lerp(930,880,q),lerp(-.018,0,q));
+  // Final material comparison: prototype gives way to its chrome/leather answer.
+  const a=e(t,28.55,29.7);x.save();x.beginPath();x.rect(0,0,W*a,H);x.clip();photo(540,lerp(1030,1000,q),lerp(930,880,q),lerp(-.018,0,q),1);x.restore();
+ }
 }
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;
 window.render=t=>continuation(t+offset);window.render(0);window.READY=true;

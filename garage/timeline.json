@@ -56,24 +56,56 @@
       "end_seconds": 20
     },
     {
-      "id": "enter-work-surface",
+      "id": "doorway-to-workbench",
       "start_seconds": 20,
-      "end_seconds": 21.4
+      "end_seconds": 21.3,
+      "text": null,
+      "camera": "2D crop/pan/material wipe; no 3D orbit",
+      "assets": [
+        "assets/workbench-v005.png",
+        "assets/prototype-v005.png",
+        "assets/chair.png"
+      ],
+      "narration": "source master samples; no time edits"
     },
     {
-      "id": "one-question",
-      "start_seconds": 21.4,
-      "end_seconds": 24.1
+      "id": "physical-drawing",
+      "start_seconds": 21.3,
+      "end_seconds": 24.3,
+      "text": null,
+      "camera": "2D crop/pan/material wipe; no 3D orbit",
+      "assets": [
+        "assets/workbench-v005.png",
+        "assets/prototype-v005.png",
+        "assets/chair.png"
+      ],
+      "narration": "source master samples; no time edits"
     },
     {
-      "id": "imagined-sketch",
-      "start_seconds": 24.1,
-      "end_seconds": 27.2
+      "id": "sketch-to-model",
+      "start_seconds": 24.3,
+      "end_seconds": 27.35,
+      "text": null,
+      "camera": "2D crop/pan/material wipe; no 3D orbit",
+      "assets": [
+        "assets/workbench-v005.png",
+        "assets/prototype-v005.png",
+        "assets/chair.png"
+      ],
+      "narration": "source master samples; no time edits"
     },
     {
-      "id": "idea-to-prototype",
-      "start_seconds": 27.2,
-      "end_seconds": 30
+      "id": "card-to-chrome",
+      "start_seconds": 27.35,
+      "end_seconds": 30,
+      "text": null,
+      "camera": "2D crop/pan/material wipe; no 3D orbit",
+      "assets": [
+        "assets/workbench-v005.png",
+        "assets/prototype-v005.png",
+        "assets/chair.png"
+      ],
+      "narration": "source master samples; no time edits"
     }
   ],
   "sound_events": [
@@ -197,26 +229,26 @@
     },
     {
       "id": "props-page-turn",
-      "moment": 21.4,
-      "start": 21.4,
+      "moment": 21.05,
+      "start": 21.05,
       "sync": 0,
-      "gain": 0.04,
+      "gain": 0.045,
       "asset": "sounds/everyday-props/props-page-turn.wav",
       "license": "CC0-1.0"
     },
     {
       "id": "writing-pencil-write",
-      "moment": 24.5,
-      "start": 24.5,
+      "moment": 22.1,
+      "start": 22.1,
       "sync": 0,
-      "gain": 0.055,
+      "gain": 0.045,
       "asset": "sounds/writing-and-drawing/writing-pencil-write.wav",
       "license": "CC0-1.0"
     },
     {
       "id": "foley-paper-touch",
-      "moment": 27.3,
-      "start": 27.278,
+      "moment": 26.75,
+      "start": 26.728,
       "sync": 0.022,
       "gain": 0.05,
       "asset": "sounds/foley/foley-paper-touch.wav",
@@ -224,10 +256,10 @@
     },
     {
       "id": "mechanical-switch-heavy",
-      "moment": 29.1,
-      "start": 29.079,
+      "moment": 29.05,
+      "start": 29.029,
       "sync": 0.021,
-      "gain": 0.035,
+      "gain": 0.04,
       "asset": "sounds/mechanical/mechanical-switch-heavy.wav",
       "license": "CC0-1.0"
     }
@@ -248,11 +280,13 @@
     17,
     18.55,
     19.2,
-    21.4,
-    24.1,
-    27.2,
-    29.4
+    21.05,
+    21.3,
+    24.3,
+    26.75,
+    27.35,
+    29.05
   ],
-  "notes": "v004: 0–30s cumulative. Original 600 picture frames reused. 20–30 uses master narration without time edits. Phrase timing provisional; no word-level ASR claim.",
+  "notes": "V005 revised photographic asset sequence. Original approved 600 picture frames retained. Original global 94 BPM score reconstructed and continuously mixed beneath unchanged source narration. Actual visual crop/parallax only, no claimed 3D orbit. ASR and listening not performed.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer"
 }

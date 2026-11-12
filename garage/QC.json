@@ -1,37 +1,94 @@
 {
-  "version": "v004-through30",
-  "sha256": "14bb695c6a659c5134ea9605dad0f4b62e732474b54a11b66acb27ace0da62b1",
+  "version": "v005-through30",
+  "sha256": "2745474cd9116d28fd5fada0d22984cd0254e4a4db06c6668c6d50b00fcad86c",
   "checks": {
     "render": {
       "status": "passed",
-      "evidence": "New master 20–30, 300 frames; cumulative 900 frames, 1080x1920, 30fps, 30.000s H264 and AAC48kHz"
+      "evidence": "New master20–30, 300 frames; cumulative900, 1080x1920, 30fps"
     },
-    "full_file_decode": {
+    "decode": {
       "status": "passed"
     },
-    "first_section_picture_preserved": {
+    "first20_picture": {
       "status": "passed",
-      "evidence": "All 600 decoded frame hashes equal approved v003"
+      "evidence": "600 decoded frame hashes equal approvedv003"
     },
-    "contact_sheet": {
+    "preproduction": {
       "status": "passed",
-      "evidence": "Reviewed question/sketch/prototype key frames and 19–22s join strip"
+      "evidence": "TREATMENT-v005, two newly generated photographic assets, three rendered style frames inspected before video"
     },
-    "audio": {
+    "music_continuity": {
       "status": "passed",
-      "evidence": "-15.77 LUFS, -1.05 dBTP encoded; first20 recovered PCM retained before single AAC encode"
+      "evidence": {
+        "voice_gain": 1.4428478579032873,
+        "music_gain": 1.8274559638724237,
+        "music_rms_per_second_20_30": [
+          0.03851862745114428,
+          0.04370436759025814,
+          0.027819270207394924,
+          0.02768668732095633,
+          0.038322973913310174,
+          0.022746901213696387,
+          0.03592023055369654,
+          0.03436792608922458,
+          0.041356476202700276,
+          0.04738950939234011
+        ],
+        "peak": 0.8561370372772217,
+        "source_map": "continuous source samples 0–1439999; no time edits"
+      }
     },
-    "narration_script_match": {
-      "status": "not performed",
-      "evidence": "User script saved; no word-level ASR or listening verification"
+    "narration": {
+      "status": "passed",
+      "evidence": "Original source-time samples continue, no narration cuts/speed changes"
+    },
+    "visual_review": {
+      "status": "passed",
+      "evidence": "Three style frames plus full sequence contact sheet and boundary strip inspected"
+    },
+    "word_alignment": {
+      "status": "not performed"
     },
     "full_speed_listening": {
       "status": "not performed"
+    },
+    "encoded_audio": {
+      "status": "passed",
+      "evidence": {
+        "integrated_lufs": "-15.83",
+        "true_peak_dbtp": "-1.33",
+        "sample_rate": 48000
+      }
+    },
+    "browser_playback": {
+      "status": "passed",
+      "evidence": "Chromium readyState4, video playing, 1080x1920, no media error. Automated playback only; no listening claim."
     }
   },
-  "material_limitations": [
-    "Cumulative preview 0–30, not finished 58.25925s film",
-    "Historical audio master absent; first20 AAC decoded and encoded once in new continuous AAC, new section voice and sparse Foley",
-    "No listening or word-level alignment verification"
+  "streams": [
+    {
+      "codec_name": "h264",
+      "width": 1080,
+      "height": 1920,
+      "start_time": "0.000000",
+      "duration": "30.000000",
+      "nb_frames": "900",
+      "side_data_list": [
+        {}
+      ]
+    },
+    {
+      "codec_name": "aac",
+      "sample_rate": "48000",
+      "start_time": "0.000000",
+      "duration": "30.000000",
+      "nb_frames": "1408"
+    }
+  ],
+  "limitations": [
+    "Generated photorealistic artwork, not documentary photos",
+    "Historical master stems absent; reconstructed original score plus recovered first20 audio, new continuous AAC encode",
+    "No listening or word-level ASR claim",
+    "0–30 cumulative preview; remaining narration not produced"
   ]
 }
