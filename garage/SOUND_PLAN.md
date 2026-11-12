@@ -14,3 +14,6 @@ V006: keep continuous reconstructed94BPM bass/percussion/guitar under untouched 
 V007: source narration and94BPM score remain continuous at original timing, including harmonica in verified quiet source windows20.85/29.3. Keep lamp contact/switch cues. Page-turn shifts24→26; house material first contacts26.181/26.602/27.362, title paper slide27.6. No speech stretch, pause or duplication to extend lamp; total30s maintained. Single continuous AAC encode. No new listening claim.
 
 V007 final timing refinement: the+2s lamp scene is split into+1s assembly (20.8–23.95 versus20.8–22.95) and+1s settled hold. Only visual sample time is mapped; original speech/music remain on the global clock. Lamp first-contact cues21.027/22.007/23.056, light switch24.05. Transition ends26.05 as planned.
+
+
+V008 is visual only: exact complete V007AAC stream copied into new export; no audio decode/re-encode, effects changes, narration edits or music retiming. Existing soft paper cue at26 remains. Audio payload hashes must match prior version.

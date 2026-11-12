@@ -10,3 +10,6 @@ V006 supersedes V00520–30. Preserve dark photographic cut-paper style, but ani
 
 
 V007 replaces open pavilion with a recognisable complete home: pitched slate roof/ridge/chimney, white textured brick walls, glass windows, red door, stone foundation/steps. Full1024x1536 photographic-style generated asset; animated masks separate its own roof/body/base so assembly has exact material and projection continuity. Fine image print grain and paper-cut alpha edges, no toy-cardboard materials. Final composition: خیال؟ right and سؤال؟ left on a shared upper baseline; house hero centered; ایده عجیب below. No striped cards or mini-lamp in final shot.
+
+
+V008 visual-only transition refinement25.4–26.85: replace white strips/hard wipe with quintic-eased optical dissolve, restrained outgoing3.5% push/30px drift and temporary defocus, incoming1.5% settle and focus resolve. Local red pool contracts toward red doorway; no full-frame flash or extra color. All filters/transforms restored by26.85; Persian text remains sharp at original timing. No new assets.

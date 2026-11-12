@@ -329,7 +329,7 @@
     28.2,
     27.6
   ],
-  "notes": "V007 targeted30s revision. Lamp end24.05→26.05 (+2.000s), later visuals compressed into remaining interval; speech/music never retimed. Real-material recognisable house replaces pavilion. Two upper Persian questions replace stripes; lower strange-idea phrase replaces invitation only after20. First600 picture frames retained.",
+  "notes": "V008 transition-only revision25.4–26.85. Exact V007 source image behavior outside window, all shot/text/narration timings retained. Lamp long-hold extension remains. Optical group layers replace white-bar wipe.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer",
   "editorial_texts": [
     {
@@ -363,5 +363,14 @@
     "additional_settled_hold_seconds": 1,
     "audio_retimed": false,
     "total_seconds": 30
-  }
+  },
+  "transitions": [
+    {
+      "id": "lamp-light-to-house",
+      "start_seconds": 25.4,
+      "end_seconds": 26.85,
+      "type": "quintic eased optical dissolve, outgoing defocus and restrained push, incoming focus resolve, localized red light/door match",
+      "audio": "V007 AAC stream copied unchanged"
+    }
+  ]
 }

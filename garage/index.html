@@ -86,44 +86,57 @@ function master(t){
 const through20=master;
 through20(20);const doorwayFrame=document.createElement('canvas');doorwayFrame.width=W;doorwayFrame.height=H;doorwayFrame.getContext('2d').drawImage(c,0,0);
 // V006: independent photographic parts, not a camera pan across a still.
-function layer(img,box,src,dst,scale,rot=0,alpha=1){
- if(alpha<=0)return;x.save();x.globalAlpha=alpha;x.translate(...dst);x.rotate(rot);x.scale(scale,scale);x.shadowColor='rgba(0,0,0,.55)';x.shadowBlur=16;x.shadowOffsetY=10;x.drawImage(img,...box,box[0]-src[0],box[1]-src[1],box[2],box[3]);x.restore();
+function layer(img,box,src,dst,scale,rot=0,alpha=1,ctx=x){
+ if(alpha<=0)return;ctx.save();ctx.globalAlpha=alpha;ctx.translate(...dst);ctx.rotate(rot);ctx.scale(scale,scale);ctx.shadowColor='rgba(0,0,0,.55)';ctx.shadowBlur=16;ctx.shadowOffsetY=10;ctx.drawImage(img,...box,box[0]-src[0],box[1]-src[1],box[2],box[3]);ctx.restore();
 }
 function settle(t,a,b){const q=cl((t-a)/(b-a));return q===1?1:1-Math.pow(1-q,3)*Math.cos(q*Math.PI*2.1)}
-function lamp(t,alpha=1){
+function lamp(t,alpha=1,ctx=x){
  const base=settle(t,20.8,21.45),arm=settle(t,21.45,22.18),shade=settle(t,22.15,22.95);
  const angle=(1-arm)*.62;
- layer(lampParts,[10,420,485,290],[395,485],[540+(1-base)*230,1330+(1-base)*260],.9,(1-base)*-.2,alpha*e(t,20.8,21.05));
- layer(lampParts,[545,112,450,820],[590,880],[540,1330],.9,angle,alpha*e(t,21.45,21.7));
+ layer(lampParts,[10,420,485,290],[395,485],[540+(1-base)*230,1330+(1-base)*260],.9,(1-base)*-.2,alpha*e(t,20.8,21.05),ctx);
+ layer(lampParts,[545,112,450,820],[590,880],[540,1330],.9,angle,alpha*e(t,21.45,21.7),ctx);
  const dx=-20*.9,dy=-730*.9,px=540+dx*Math.cos(angle)-dy*Math.sin(angle),py=1330+dx*Math.sin(angle)+dy*Math.cos(angle);
- layer(lampParts,[1040,320,470,440],[1450,440],[px+(1-shade)*240,py-(1-shade)*190],.9,(1-shade)*-.7,alpha*e(t,22.15,22.4));
+ layer(lampParts,[1040,320,470,440],[1450,440],[px+(1-shade)*240,py-(1-shade)*190],.9,(1-shade)*-.7,alpha*e(t,22.15,22.4),ctx);
 }
 // V007: one coherent architectural photograph separated into material masks.
 const roofMask=[[0,755],[305,220],[665,355],[670,290],[750,280],[785,340],[785,450],[1024,790],[1024,805],[650,715],[305,280],[30,770]];
 const baseMask=[[0,1192],[650,1210],[1024,1180],[1024,1536],[0,1536]];
-function polygon(points){x.moveTo(...points[0]);for(const pt of points.slice(1))x.lineTo(...pt);x.closePath()}
-function housePiece(kind,dx,dy,alpha){
- if(alpha<=0)return;x.save();x.globalAlpha=alpha;x.translate(540+dx,1080+dy);x.scale(.84,.84);x.translate(-512,-800);
- x.beginPath();if(kind==='body'){x.rect(0,0,1024,1536);polygon(roofMask);polygon(baseMask);x.clip('evenodd')}else{polygon(kind==='roof'?roofMask:baseMask);x.clip()}
- x.drawImage(houseAsset,0,0);x.restore();
+function polygon(points,ctx=x){ctx.moveTo(...points[0]);for(const pt of points.slice(1))ctx.lineTo(...pt);ctx.closePath()}
+function housePiece(kind,dx,dy,alpha,ctx=x){
+ if(alpha<=0)return;ctx.save();ctx.globalAlpha=alpha;ctx.translate(540+dx,1080+dy);ctx.scale(.84,.84);ctx.translate(-512,-800);
+ ctx.beginPath();if(kind==='body'){ctx.rect(0,0,1024,1536);polygon(roofMask,ctx);polygon(baseMask,ctx);ctx.clip('evenodd')}else{polygon(kind==='roof'?roofMask:baseMask,ctx);ctx.clip()}
+ ctx.drawImage(houseAsset,0,0);ctx.restore();
 }
-function house(t){
- if(t>=28.2){x.save();x.translate(540,1080);x.scale(.84,.84);x.translate(-512,-800);x.drawImage(houseAsset,0,0);x.restore();return}
+function house(t,ctx=x){
+ if(t>=28.2){ctx.save();ctx.translate(540,1080);ctx.scale(.84,.84);ctx.translate(-512,-800);ctx.drawImage(houseAsset,0,0);ctx.restore();return}
  const f=settle(t,26.05,26.6),w=settle(t,26.4,27.25),r=settle(t,27.1,28.2);
- housePiece('base',0,(1-f)*220,e(t,26.05,26.25));housePiece('body',-(1-w)*200,-(1-w)*160,e(t,26.4,26.65));housePiece('roof',0,-(1-r)*320,e(t,27.1,27.35));
+ housePiece('base',0,(1-f)*220,e(t,26.05,26.25),ctx);housePiece('body',-(1-w)*200,-(1-w)*160,e(t,26.4,26.65),ctx);housePiece('roof',0,-(1-r)*320,e(t,27.1,27.35),ctx);
+}
+// V008: two transparent photographic passes share a soft optical handoff.
+const lampPass=document.createElement('canvas'),housePass=document.createElement('canvas');
+for(const pass of [lampPass,housePass]){pass.width=W;pass.height=H}
+const lampCtx=lampPass.getContext('2d'),houseCtx=housePass.getContext('2d');
+function opticalEase(t,a,b){const q=cl((t-a)/(b-a));return q*q*q*(q*(q*6-15)+10)}
+function cinematicHandoff(t){
+ const q=opticalEase(t,25.4,26.85),u=opticalEase(t,26.05,26.85);
+ lampCtx.clearRect(0,0,W,H);houseCtx.clearRect(0,0,W,H);
+ lamp(t-1,1,lampCtx);if(t>=26.05)house(t,houseCtx);
+ // The local red pool contracts toward the incoming red doorway.
+ x.save();x.globalAlpha=1-opticalEase(t,26.15,26.75);x.filter=`blur(${12*q}px)`;x.fillStyle=RED;x.beginPath();x.arc(lerp(405,412,q),lerp(1090,1270,q),lerp(300,35,q),0,Math.PI*2);x.fill();x.restore();
+ // Gentle push/defocus, then a matching focus resolve. No hard-edged wipe.
+ x.save();x.globalAlpha=1-opticalEase(t,25.65,26.7);x.filter=`blur(${16*q}px)`;x.translate(405-30*q,1090-10*q);x.scale(1+.035*q,1+.035*q);x.translate(-405,-1090);x.drawImage(lampPass,0,0);x.restore();
+ if(t>=26.05){x.save();x.globalAlpha=.75+.25*u;x.filter=`blur(${10*(1-u)}px)`;x.translate(540+20*(1-u),1190+12*(1-u));x.scale(.985+.015*u,.985+.015*u);x.translate(-540,-1190);x.drawImage(housePass,0,0);x.restore()}
 }
 function continuation(t){
  if(t<20){through20(t);return}
  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
  if(t<21.0){x.drawImage(doorwayFrame,0,0);for(let i=0;i<5;i++){const q=e(t,20+i*.045,20.65+i*.045);x.save();x.beginPath();x.rect(0,400+i*220,W*q,225);x.clip();x.drawImage(paper,0,0);x.restore()}}
- if(t<26.05){
-  // Exactly two extra seconds: one in assembly and one in the settled hold; audio clock unchanged.
-  const on=e(t,23.95,24.1)*(1-e(t,25.65,26.05));x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();const lampTime=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lampTime,1-e(t,25.75,26.05));
-  if(t>25.7){const a=e(t,25.7,26.05);for(let i=0;i<3;i++){x.save();x.translate(lerp(1400,540,a),820+i*180);x.rotate(-.1);x.fillStyle=i===1?WHITE:'#d5d5d5';x.fillRect(-600,-55,1200,110);x.restore()}}
- }else{
-  house(t);
-  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);
-  type('خیال؟',750,450+18*(1-a),68,a);type('سؤال؟',320,450+18*(1-b),68,b);
+ if(t<25.4){
+  const on=e(t,23.95,24.1);x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();
+  const lampTime=t<=23.95?20.8+(t-20.8)*2.15/3.15:t-1;lamp(lampTime);
+ }else if(t<26.85){cinematicHandoff(t)}else{house(t)}
+ if(t>=26.05){
+  const a=e(t,26.25,26.6),b=e(t,26.45,26.8);type('خیال؟',750,450+18*(1-a),68,a);type('سؤال؟',320,450+18*(1-b),68,b);
   const k=e(t,27.6,27.85);x.save();x.globalAlpha=k;redSheet(1,150,1640,760);x.restore();type('ایده عجیب',540,1635,76,k);
  }
 }

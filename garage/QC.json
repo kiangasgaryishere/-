@@ -1,6 +1,6 @@
 {
-  "version": "v007-through30",
-  "sha256": "61af0430e397af9720ddf3472e7267c78a90842e5bf49edd3be854be36857687",
+  "version": "v008-through30",
+  "sha256": "3385695ca0215867188c0a11ae313e0c0119395d65f281d2f6e6c37f78b250ef",
   "streams": [
     {
       "codec_name": "h264",
@@ -29,76 +29,59 @@
     },
     "first20_picture": {
       "status": "passed",
-      "evidence": "All600 decoded picture hashes equal approvedv003"
+      "evidence": "All600 decoded picture hashes equal approvedV003"
     },
-    "lamp_extension": {
+    "unaffected_source_frames": {
       "status": "passed",
       "evidence": {
-        "lamp_scene_end_before": 24.05,
-        "lamp_scene_end_after": 26.05,
-        "scene_extension_seconds": 2,
-        "assembly_duration_before": 2.15,
-        "assembly_duration_after": 3.15,
-        "additional_settled_hold_seconds": 1,
-        "audio_retimed": false,
-        "total_seconds": 30
+        "25.0": true,
+        "27.2": true,
+        "29.2": true
       }
     },
-    "house": {
+    "transition": {
       "status": "passed",
-      "evidence": "Real-material1024x1536 house asset with brick/slate/glass/stone and paper-cut grain. Same-source masked base/body/roof assemble; final original asset draws without mask seams. Reviewed4fps assembly strip."
+      "evidence": "Reviewed three preproduction frames and final4fps25–27.5 action strip; white-bar wipe absent, continuous optical overlap/light contraction, no empty black frame, focus restored by26.85"
     },
-    "text_revision": {
+    "timing_and_text": {
       "status": "passed",
-      "evidence": "Separate خیال؟ right and سؤال؟ left; lower ایده عجیب readable27.85–30. Lower invitation and striped cards absent in20–30."
+      "evidence": "V007lamp extension, house assembly times, all three Persian labels and30s total preserved"
     },
-    "preproduction": {
-      "status": "passed",
-      "evidence": "Three rendered style frames inspected before full render; final labels reordered to Persian reading order before render"
-    },
-    "visual_review": {
-      "status": "passed",
-      "evidence": "2fps24–30 revision strip and4fps house assembly strip inspected"
-    },
-    "music_continuity": {
+    "audio_equivalence": {
       "status": "passed",
       "evidence": {
-        "voice_gain": 1.4428478579032873,
-        "music_gain": 1.8274559638724237,
-        "music_rms_per_second_20_30": [
-          0.038517890518066276,
-          0.04370555116717203,
-          0.027819270207394924,
-          0.02768668732095633,
-          0.038322973913310174,
-          0.022746901213696387,
-          0.03592023055369654,
-          0.03436792608922458,
-          0.041356476202700276,
-          0.04738734567852838
-        ],
-        "peak": 0.8561370372772217,
-        "source_map": "continuous source samples 0–1439999; no time edits"
+        "aac_packets_equal": true,
+        "aac_packet_count": 1408,
+        "decoded_pcm_equal": true
       }
     },
     "encoded_audio": {
       "status": "passed",
       "evidence": {
-        "lufs": "-15.83",
-        "true_peak_dbtp": "-1.39"
+        "basis": "AAC payload and decoded PCM exactly equalV007; prior measured levels therefore retained",
+        "prior_measurement": {
+          "status": "passed",
+          "evidence": {
+            "lufs": "-15.83",
+            "true_peak_dbtp": "-1.39"
+          }
+        }
       }
     },
-    "word_alignment": {
-      "status": "not performed"
+    "render": {
+      "status": "passed",
+      "evidence": "300 new frames,1080x1920,30fps,CRF14,JPEG95, one worker. Two-worker attempt timed out on screenshot; single-worker final completed in306s without resolution/quality reduction."
     },
     "full_speed_listening": {
+      "status": "not performed"
+    },
+    "word_alignment": {
       "status": "not performed"
     }
   },
   "limitations": [
-    "Photorealistic generated house, not documentary photography",
-    "Historical mastered soundtrack stems absent; first20 decoded PCM recovered and original score reconstructed; AAC encoded continuously once",
-    "No full-speed listening or word-level ASR claim",
+    "Generated photorealistic assets, not documentary photography",
+    "No new listening/ASR verification; audio exactly preserved fromV007",
     "Cumulative0–30 only"
   ]
 }
