@@ -6,3 +6,6 @@ V004: original master stems are absent. Recover first 960000 mono PCM samples fr
 
 
 V005 supersedes V004 music reduction. Reconstruct original rng810 94BPM bass/brush/kick and muted guitar from make_audio.py, full global clock 0–58.25925; no reset at20. Fit narrator and score gains against approved16–20, music gain1.82746, voice1.44285. New music stem measured nonzero in every second20–30. Retain approved first20 decoded PCM, mix continuous narrator source thereafter and four sparse CC0 material cues. No recycled residual speech; 5ms additive join continuity correction, no source-time edit. Historical mastered stems unavailable; final AAC encoded once.
+
+
+V006: keep continuous reconstructed94BPM bass/percussion/guitar under untouched source timing. VCSL harmonica20.85–21.11 and29.3–29.59 uses measured quiet source intervals20.6–21.47 and29.20–29.79 (RMS<.012); no claim of listening review. Sparse CC0 Foley is synchronized to first target contact of damped arrival, not last settle: base20.955, arm21.624, shade22.340, switch23.05, architectural floor24.205, walls24.902/25.340, roof26.152. Quiet paper bridges20.35/24/28.25. Historical mastered stems absent; first20 decoded approved PCM retained and new continuous AAC encoded once.

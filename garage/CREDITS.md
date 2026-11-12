@@ -13,3 +13,6 @@ V004 20–30s: reuses existing generated chair/study/doorway artwork; new determ
 
 
 V005: workbench-v005.png and prototype-v005.png generated specifically for this production with image_gen, photorealistic assets, not documentary photographs. No new external stock. Original seeded score reconstructed from project make_audio.py; VCSL CC0 harmonica source preserved. SFX Kit commit92780e7ab0cdfb557497a988089c47f46e8c7412, CC0.
+
+
+V006: lamp-parts-v006.png and pavilion-parts-v006.png generated specifically with image_gen; photorealistic cutout artwork, not documentary photography. Two untouched1536x1024 alpha atlases supply independent Canvas sprites. Uploaded reference videos analyzed only; no source frames/logos/people/audio included in production or Git. SFX KitCC0 at92780e7ab0cdfb557497a988089c47f46e8c7412; VCSLCC0 harmonica. Code-generated geometric print cards and typography.

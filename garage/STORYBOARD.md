@@ -13,3 +13,6 @@ V004 20–30s: 20–21.4 enter the same red doorway onto a work surface; 21.4–
 
 
 V005 supersedes V004 20–30: 20–21.3 doorway pushes into drawing workbench; 21.3–24.3 medium pencil/drawing composition settles; 24.3–27.35 lateral move discloses grey-card model, dark paper occlusion reveals isolated model; 27.35–30 prototype gains chrome/leather through a left-to-right material wipe. No question-card or added text. Visual/sound plan: TREATMENT-v005.md.
+
+
+V00620–30 supersedes V005:20–21 paper-strip cover/uncover from doorway;20.8–22.95 lamp base/arm/shade arrive independently and assemble around a shared joint;22.95–24.05 localized red light disc switches on and paper fragments wipe to architecture;24.05–26.8 floor/walls/roof assemble independently;26.45 red entry path appears;27.3–28.3 architecture shifts right, mini lamp slides left, graphic cards align;28.25–30 بزنیم گاراژ appears visually, held from28.5. No added spoken phrase. Each object uses actual layer transforms; camera is locked during assembly. See TREATMENT-v006.md.

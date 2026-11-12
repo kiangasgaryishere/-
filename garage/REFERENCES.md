@@ -1,0 +1,11 @@
+# Reference analysis — V006
+User-supplied video files are inspiration, not licensed production footage. No source frames, logos, people or audio will be redistributed in the film.
+Inspected ffprobe metadata, 16-frame contact sheets across each full video, and 4fps strips across chosen 1.5-second actions. This is visual/frame analysis, not a listening review.
+
+| Reference | Observed evidence | Transferable principle | V006 use | Limits |
+|---|---|---|---|---|
+| 1: uploaded Klickpin filename (actual content is aging/editorial collage), 27.125s,720x1280,24fps | roughly0–10s face/skull slice replacements, detached type and anatomy/tool cutouts; roughly10–20s photographic objects at changing scale | A subject should change internally: cuts/masks reveal information, not just camera drift | Separate lamp parts assemble and illuminate a discovered form | Do not infer ocean imagery from filename; do not copy face/skull compositions, dense text, red full-frame background or promotional ending |
+| 2:6177c7…720w,47.125s,720x1280,16fps | roughly0–12s head/currency/blueprint/number contrasts;17–23s hand/currency/cutting-mat sequences; later book and product collage | Object substitution and physical contact/action carry story across disciplines | Product lamp → physical architecture model, motivated material contacts, one main focus | Do not import its stock media, oversaturated blue/green/yellow palette, dense subtitle style or finance story |
+| 3:cc8a1b…720w,27.242s,600x1080,60fps |0–21s monochrome portrait cutouts, layered torn paper and short type blocks moving on different axes;21s onward logo signoff | Independent paper layers and a clear rhythm of settle/reveal/transition | Parts move independently, architectural layers land separately, paper wipes connect scenes | Closest collage grammar but our ground remains dark; no teal, reference people/logos or full-white background |
+
+Chosen Opuscar source: custom photographic paper-collage derivative of halftone-dossier and risograph, as already approved in REVIEW.md; rendererf2471cacca270963baa2e1c72b8a7b25dfe0d95c. Fixed texture, deterministic global time, independent material layers, sparse crisp Persian typography. No claim of exact upstream palette/style conformity.

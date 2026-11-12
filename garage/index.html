@@ -6,7 +6,7 @@ const c=document.querySelector('canvas'),x=c.getContext('2d');
 const chair=new Image();chair.src='assets/chair.png';await chair.decode();await document.fonts.load('bold 70px GarageFa');
 const study=new Image();study.src='assets/chair-study.png';await study.decode();
 const parts=new Image();parts.src='assets/chair-parts.png';await parts.decode();const portal=new Image();portal.src='assets/garage-portal.png';await portal.decode();await document.fonts.load('bold 100px GarageLatin');
-const bench=new Image();bench.src='assets/workbench-v005.png';await bench.decode();const model=new Image();model.src='assets/prototype-v005.png';await model.decode();
+const lampParts=new Image();lampParts.src='assets/lamp-parts-v006.png';await lampParts.decode();const buildingParts=new Image();buildingParts.src='assets/pavilion-parts-v006.png';await buildingParts.decode();
 const T=await (await fetch('timeline.json')).json();
 const W=1080,H=1920,BLACK='#111111',RED='#D71920',WHITE='#FFFFFF';
 const cl=v=>Math.max(0,Math.min(1,v)),e=(t,a,b)=>ss(cl((t-a)/(b-a)));
@@ -85,28 +85,47 @@ function master(t){
 // v004: the doorway opens onto a single material work surface.
 const through20=master;
 through20(20);const doorwayFrame=document.createElement('canvas');doorwayFrame.width=W;doorwayFrame.height=H;doorwayFrame.getContext('2d').drawImage(c,0,0);
-function prototype(t){
- const a=e(t,27.2,29.4);x.save();x.globalAlpha=1-a;x.globalCompositeOperation='screen';x.drawImage(study,180,460,720,720*study.height/study.width);x.restore();
- for(let i=0;i<6;i++){const q=e(t,27.2+i*.12,28.6+i*.12);if(!q)continue;x.save();const w=720,h=w*chair.height/chair.width,yy=460+i*h/6;x.beginPath();x.rect(0,yy-1,1080,h/6+2);x.clip();photo(540+(i%2?1:-1)*(1-q)*150,460+h/2,w,(1-q)*.04,q);x.restore()}
+// V006: independent photographic parts, not a camera pan across a still.
+function layer(img,box,src,dst,scale,rot=0,alpha=1){
+ if(alpha<=0)return;x.save();x.globalAlpha=alpha;x.translate(...dst);x.rotate(rot);x.scale(scale,scale);x.shadowColor='rgba(0,0,0,.55)';x.shadowBlur=16;x.shadowOffsetY=10;x.drawImage(img,...box,box[0]-src[0],box[1]-src[1],box[2],box[3]);x.restore();
 }
-function picture(img,cx,cy,w,rot=0,alpha=1){x.save();x.globalAlpha=alpha;x.translate(cx,cy);x.rotate(rot);x.shadowColor='rgba(0,0,0,.6)';x.shadowBlur=24;x.shadowOffsetY=12;x.drawImage(img,-w/2,-w*img.height/img.width/2,w,w*img.height/img.width);x.restore()}
+function settle(t,a,b){const q=cl((t-a)/(b-a));return q===1?1:1-Math.pow(1-q,3)*Math.cos(q*Math.PI*2.1)}
+function lamp(t,alpha=1){
+ const base=settle(t,20.8,21.45),arm=settle(t,21.45,22.18),shade=settle(t,22.15,22.95);
+ const angle=(1-arm)*.62;
+ layer(lampParts,[10,420,485,290],[395,485],[540+(1-base)*230,1330+(1-base)*260],.9,(1-base)*-.2,alpha*e(t,20.8,21.05));
+ layer(lampParts,[545,112,450,820],[590,880],[540,1330],.9,angle,alpha*e(t,21.45,21.7));
+ const dx=-20*.9,dy=-730*.9,px=540+dx*Math.cos(angle)-dy*Math.sin(angle),py=1330+dx*Math.sin(angle)+dy*Math.cos(angle);
+ layer(lampParts,[1040,320,470,440],[1450,440],[px+(1-shade)*240,py-(1-shade)*190],.9,(1-shade)*-.7,alpha*e(t,22.15,22.4));
+}
+function pavilion(t){
+ const floor=settle(t,24.05,24.7),left=settle(t,24.7,25.55),right=settle(t,25.15,25.95),roof=settle(t,25.95,26.8);
+ layer(buildingParts,[20,40,730,440],[390,260],[540,1190+(1-floor)*250],1.05,0,e(t,24.05,24.3));
+ // Rear faces meet in a common architectural coordinate system.
+ layer(buildingParts,[885,8,445,500],[900,280],[540+(1-left)*-250,975-(1-left)*240],.9,(1-left)*-.12,e(t,24.7,24.95));
+ layer(buildingParts,[200,520,445,500],[626,780],[540+(1-right)*250,975-(1-right)*260],.9,(1-right)*.12,e(t,25.15,25.4));
+ const mark=e(t,26.45,26.85);x.save();x.globalAlpha=mark;x.fillStyle=RED;x.beginPath();x.moveTo(420,1300);x.lineTo(540,1235);x.lineTo(660,1300);x.lineTo(540,1370);x.closePath();x.fill();x.restore();
+ layer(buildingParts,[790,550,730,460],[1150,775],[540,920-(1-roof)*400],1.05,(1-roof)*.055,e(t,25.95,26.2));
+}
+function graphicCard(cx,cy,angle,t,index){
+ const q=settle(t,27.45+index*.12,28.3+index*.12);x.save();x.translate(cx+(1-q)*(index%2?-700:700),cy);x.rotate(angle);x.scale(.6,.6);x.shadowColor='rgba(0,0,0,.55)';x.shadowBlur=15;x.shadowOffsetY=8;x.fillStyle=WHITE;x.fillRect(-190,-140,380,280);x.fillStyle=BLACK;
+ for(let k=0;k<7;k++){x.save();x.beginPath();x.rect(-170,-120,340,240);x.clip();x.translate(-180+k*65,-80);x.rotate(-.5);x.fillRect(-12,-220,25,460);x.restore()}
+ x.restore();
+}
 function continuation(t){
  if(t<20){through20(t);return}
  x.setTransform(1,0,0,1,0,0);x.drawImage(paper,0,0);
- if(t<21.3){
-  const q=e(t,20,21.3);x.save();x.translate(540,1050);x.scale(1+q*1.4,1+q*1.4);x.translate(-540,-1050);x.globalAlpha=1-e(t,20.7,21.3);x.drawImage(doorwayFrame,0,0);x.restore();
-  const a=e(t,20.55,21.3);picture(bench,540,lerp(1950,1000,a),lerp(950,1080,a),lerp(.055,-.012,a),a);
- }else if(t<24.3){
-  const q=e(t,21.3,24.3);picture(bench,lerp(560,580,q),lerp(1030,1090,q),lerp(1100,1240,q),lerp(-.012,0,q));
- }else if(t<27.35){
-  const q=e(t,24.3,27.35);picture(bench,lerp(580,440,q),lerp(1090,1150,q),lerp(1240,1360,q),0);
-  // Material occlusion: a strip of the same dark paper exposes the model.
-  const a=e(t,26.35,27.35);x.save();x.globalAlpha=a;x.drawImage(paper,0,0);x.restore();
-  x.save();x.globalAlpha=a;redSheet(1,420,1110,960);x.restore();picture(model,lerp(780,540,a),lerp(1120,1030,a),lerp(630,930,a),lerp(.045,-.018,a),a);
- }else{
-  const q=e(t,27.35,30);redSheet(1,lerp(420,350,q),1110,960);picture(model,540,lerp(1030,1000,q),lerp(930,880,q),lerp(-.018,0,q));
-  // Final material comparison: prototype gives way to its chrome/leather answer.
-  const a=e(t,28.55,29.7);x.save();x.beginPath();x.rect(0,0,W*a,H);x.clip();photo(540,lerp(1030,1000,q),lerp(930,880,q),lerp(-.018,0,q),1);x.restore();
+ if(t<21.0){x.drawImage(doorwayFrame,0,0);for(let i=0;i<5;i++){const q=e(t,20+i*.045,20.65+i*.045);x.save();x.beginPath();x.rect(0,400+i*220,W*q,225);x.clip();x.drawImage(paper,0,0);x.restore()}}
+ if(t<24.05){
+  const on=e(t,22.95,23.1)*(1-e(t,23.65,24.05));x.save();x.globalAlpha=on;x.fillStyle=RED;x.beginPath();x.arc(405,1090,300,0,Math.PI*2);x.fill();x.restore();lamp(t,1-e(t,23.75,24.05));
+  if(t>23.7){const a=e(t,23.7,24.05);for(let i=0;i<3;i++){x.save();x.translate(lerp(1400,540,a),820+i*180);x.rotate(-.1);x.fillStyle=i===1?WHITE:'#d5d5d5';x.fillRect(-600,-55,1200,110);x.restore()}}
+ }else if(t<27.3){pavilion(t)}
+ else{
+  const q=e(t,27.3,28.3);x.save();x.translate(lerp(0,210,q),lerp(0,-70,q));x.translate(540,1190);x.scale(lerp(1,.7,q),lerp(1,.7,q));x.translate(-540,-1190);pavilion(t);x.restore();
+  x.save();x.translate(lerp(-650,-270,q),100);x.translate(540,1330);x.scale(.45,.45);x.translate(-540,-1330);lamp(23.3,e(t,27.3,28));x.restore();
+  graphicCard(350,710,-.07,t,0);graphicCard(640,760,.07,t,1);
+  // Red is an invitation tab, localized and introduced only on the phrase beat.
+  const a=e(t,28.25,28.5);x.save();x.globalAlpha=a;x.translate(0,12*(1-a));redSheet(1,150,1640,760);type('بزنیم گاراژ',540,1635,76,a);x.restore();
  }
 }
 const offset=Number(new URLSearchParams(location.search).get('start')||0);window.DUR=T.preview_frames/T.fps-offset;

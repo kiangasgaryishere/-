@@ -56,56 +56,24 @@
       "end_seconds": 20
     },
     {
-      "id": "doorway-to-workbench",
+      "id": "paper-doorway-wipe",
       "start_seconds": 20,
-      "end_seconds": 21.3,
-      "text": null,
-      "camera": "2D crop/pan/material wipe; no 3D orbit",
-      "assets": [
-        "assets/workbench-v005.png",
-        "assets/prototype-v005.png",
-        "assets/chair.png"
-      ],
-      "narration": "source master samples; no time edits"
+      "end_seconds": 21
     },
     {
-      "id": "physical-drawing",
-      "start_seconds": 21.3,
-      "end_seconds": 24.3,
-      "text": null,
-      "camera": "2D crop/pan/material wipe; no 3D orbit",
-      "assets": [
-        "assets/workbench-v005.png",
-        "assets/prototype-v005.png",
-        "assets/chair.png"
-      ],
-      "narration": "source master samples; no time edits"
+      "id": "lamp-assembly-and-light",
+      "start_seconds": 21,
+      "end_seconds": 24.05
     },
     {
-      "id": "sketch-to-model",
-      "start_seconds": 24.3,
-      "end_seconds": 27.35,
-      "text": null,
-      "camera": "2D crop/pan/material wipe; no 3D orbit",
-      "assets": [
-        "assets/workbench-v005.png",
-        "assets/prototype-v005.png",
-        "assets/chair.png"
-      ],
-      "narration": "source master samples; no time edits"
+      "id": "architecture-assembly",
+      "start_seconds": 24.05,
+      "end_seconds": 27.3
     },
     {
-      "id": "card-to-chrome",
-      "start_seconds": 27.35,
-      "end_seconds": 30,
-      "text": null,
-      "camera": "2D crop/pan/material wipe; no 3D orbit",
-      "assets": [
-        "assets/workbench-v005.png",
-        "assets/prototype-v005.png",
-        "assets/chair.png"
-      ],
-      "narration": "source master samples; no time edits"
+      "id": "design-disciplines-invitation",
+      "start_seconds": 27.3,
+      "end_seconds": 30
     }
   ],
   "sound_events": [
@@ -228,39 +196,118 @@
       "license": "CC0-1.0"
     },
     {
+      "id": "foley-paper-slide",
+      "moment": 20.35,
+      "start": 20.344,
+      "sync": 0.006,
+      "gain": 0.035,
+      "asset": "sounds/foley/foley-paper-slide.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "impact-light-soft",
+      "moment": 20.955,
+      "start": 20.943,
+      "sync": 0.012,
+      "gain": 0.035,
+      "asset": "sounds/impacts/impact-light-soft.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "mechanical-switch-light",
+      "moment": 21.624,
+      "start": 21.614,
+      "sync": 0.01,
+      "gain": 0.025,
+      "asset": "sounds/mechanical/mechanical-switch-light.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "impact-light-soft",
+      "moment": 22.34,
+      "start": 22.328,
+      "sync": 0.012,
+      "gain": 0.025,
+      "asset": "sounds/impacts/impact-light-soft.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "mechanical-switch-light",
+      "moment": 23.05,
+      "start": 23.04,
+      "sync": 0.01,
+      "gain": 0.022,
+      "asset": "sounds/mechanical/mechanical-switch-light.wav",
+      "license": "CC0-1.0"
+    },
+    {
       "id": "props-page-turn",
-      "moment": 21.05,
-      "start": 21.05,
+      "moment": 24.0,
+      "start": 24.0,
       "sync": 0,
-      "gain": 0.045,
+      "gain": 0.035,
       "asset": "sounds/everyday-props/props-page-turn.wav",
       "license": "CC0-1.0"
     },
     {
-      "id": "writing-pencil-write",
-      "moment": 22.1,
-      "start": 22.1,
-      "sync": 0,
-      "gain": 0.045,
-      "asset": "sounds/writing-and-drawing/writing-pencil-write.wav",
-      "license": "CC0-1.0"
-    },
-    {
       "id": "foley-paper-touch",
-      "moment": 26.75,
-      "start": 26.728,
+      "moment": 24.205,
+      "start": 24.183,
       "sync": 0.022,
-      "gain": 0.05,
+      "gain": 0.035,
       "asset": "sounds/foley/foley-paper-touch.wav",
       "license": "CC0-1.0"
     },
     {
-      "id": "mechanical-switch-heavy",
-      "moment": 29.05,
-      "start": 29.029,
-      "sync": 0.021,
-      "gain": 0.04,
-      "asset": "sounds/mechanical/mechanical-switch-heavy.wav",
+      "id": "foley-paper-touch",
+      "moment": 24.902,
+      "start": 24.88,
+      "sync": 0.022,
+      "gain": 0.025,
+      "asset": "sounds/foley/foley-paper-touch.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "foley-paper-touch",
+      "moment": 25.34,
+      "start": 25.318,
+      "sync": 0.022,
+      "gain": 0.022,
+      "asset": "sounds/foley/foley-paper-touch.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "impact-light-soft",
+      "moment": 26.152,
+      "start": 26.14,
+      "sync": 0.012,
+      "gain": 0.035,
+      "asset": "sounds/impacts/impact-light-soft.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "foley-paper-slide",
+      "moment": 28.25,
+      "start": 28.244,
+      "sync": 0.006,
+      "gain": 0.03,
+      "asset": "sounds/foley/foley-paper-slide.wav",
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "harmonica-response",
+      "start": 20.85,
+      "note": "F4",
+      "duration": 0.22,
+      "gain": 0.018,
+      "license": "CC0-1.0"
+    },
+    {
+      "id": "harmonica-response",
+      "start": 29.3,
+      "note": "A4",
+      "duration": 0.25,
+      "gain": 0.016,
       "license": "CC0-1.0"
     }
   ],
@@ -280,13 +327,18 @@
     17,
     18.55,
     19.2,
-    21.05,
-    21.3,
-    24.3,
-    26.75,
-    27.35,
-    29.05
+    20.8,
+    21.45,
+    22.15,
+    22.95,
+    24.05,
+    24.7,
+    25.15,
+    25.95,
+    26.45,
+    27.3,
+    28.25
   ],
-  "notes": "V005 revised photographic asset sequence. Original approved 600 picture frames retained. Original global 94 BPM score reconstructed and continuously mixed beneath unchanged source narration. Actual visual crop/parallax only, no claimed 3D orbit. ASR and listening not performed.",
+  "notes": "V006 reference-led motion revision: independent lamp and pavilion parts, graphic print layers; no chair in new20–30. Original first600 picture frames reused, continuous source narration and score. Phrase returns visually only.",
   "visual_revision": "v002-centered-question-red-as-continuous-paper-underlayer"
 }

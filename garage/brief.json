@@ -15,12 +15,13 @@
   "mode": "ten-second",
   "narration": "safari.mp3, unchanged wording and speed",
   "caption_policy": "sparse editorial words only; no word captions",
-  "audio": "Continuous reconstructed original seeded 94 BPM swung bass/percussion/guitar bed, source narration, sparse CC0 pencil/paper SFX; no music drop at20",
-  "visual_revision": "Larger centered question and continuous red discovery-sheet, per user feedback",
-  "latest_export": "video/garage-through-030s-v005.mp4",
+  "audio": "Continuous 94BPM seeded jazz bass/brush/kick, muted guitar, VCSL harmonica in measured source pauses, sparse contact Foley, unchanged narrator",
+  "visual_revision": "V006: actual independent lamp/pavilion/graphic-layer motion; no chair after20; reference-led material cuts",
+  "latest_export": "video/garage-through-030s-v006.mp4",
   "completed_master_interval": [
     0,
     30
   ],
-  "next_start_seconds": 30
+  "next_start_seconds": 30,
+  "audience": "Industrial/product/graphic/architecture designers; broadly accessible narrative introduction to GARAGE cast"
 }
